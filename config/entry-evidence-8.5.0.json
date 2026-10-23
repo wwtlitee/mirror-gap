@@ -1,0 +1,731 @@
+{
+  "product": "Mirror Gap",
+  "version": "8.5.0",
+  "publicUrl": "https://mirror-gap-tapeout.mirror-gap-fly-daily.workers.dev/",
+  "cloudflareVersion": "a366d45f-d9be-4814-9db3-0175559137cd",
+  "staticRelease": {
+    "criticalResources": 149,
+    "independentCleanBuildMatches": true,
+    "resources": {
+      "index.html": {
+        "bytes": 17585,
+        "sha256": "08a7b1504047f6f82f7cb99b330e079c5fa0bb2f4c8b6e882cc9cda779108d8b"
+      },
+      "app.mjs": {
+        "bytes": 21079,
+        "sha256": "4e307c0031db24852f13ee5664e3a81bcd187b1e4bcbfb9cff3bb05261fa76cf"
+      },
+      "character.mjs": {
+        "bytes": 31106,
+        "sha256": "77eef7f6f283eea84cbc3efea4a1e13f7075e24dd45e1e90af7aee587f1d6592"
+      },
+      "character-export.mjs": {
+        "bytes": 3015,
+        "sha256": "36c5db8ec9fa8e419fc1f3cc29047cb0eb2e09812d25525d88bfd23b69ec23b7"
+      },
+      "companion-appearance.mjs": {
+        "bytes": 2210,
+        "sha256": "2c424c876137ac10c4326ad1f9381b0040c0f464cbdd8b99bf90b97de9a9705c"
+      },
+      "companion-preview.mjs": {
+        "bytes": 1583,
+        "sha256": "9cdb887a1c27dd9ae0cfda8e2965278a2f9c4bd879fd56b04189bebc34c291f9"
+      },
+      "companion-growth-card.mjs": {
+        "bytes": 4885,
+        "sha256": "358078fefaf3bc16061f99664838306df534c7562adf609764320b63f594f091"
+      },
+      "natural-materials.mjs": {
+        "bytes": 13708,
+        "sha256": "a30d1feb213b5792c0abde6ba2b5d4697aeaad5d305e0f3b2bebbc21c839ad9b"
+      },
+      "room-model-detail.mjs": {
+        "bytes": 20124,
+        "sha256": "b766c1754dfcd39ae0ccebdec008fd11ea24c4a802af9d5ed00cf8e055129df0"
+      },
+      "habitat-model-detail.mjs": {
+        "bytes": 42310,
+        "sha256": "52404f1f6b608a19fb70d03991d4c030b4a2f8c20169abaadb2fd15c6d34e499"
+      },
+      "camera-clipping.mjs": {
+        "bytes": 958,
+        "sha256": "69efea7086d0045e46f3f3fa6ee5d11bb23af2fd1de49fe60f35b8247eabec57"
+      },
+      "software-batching.mjs": {
+        "bytes": 6562,
+        "sha256": "b1c4da47a2504bf98481f6b31ad59a6630e60c4bf7f1e4aa22a9ea59eb8db33c"
+      },
+      "city-model-detail.mjs": {
+        "bytes": 8571,
+        "sha256": "de343dfa190ab8a56e03fd1b4f65200e8cb4e006e49bf10036ddef240285c5b3"
+      },
+      "city-billboards.mjs": {
+        "bytes": 4136,
+        "sha256": "f711052b021a6668b6d0dad50443d2fd1ced66b8b40106726d7e615ec34d4c6e"
+      },
+      "city-interiors.mjs": {
+        "bytes": 3084,
+        "sha256": "a1cb4931b0792ed71db701e326c35f2b7a9a5091b2f6db155cdfa8950c669c9e"
+      },
+      "city-shops.mjs": {
+        "bytes": 10386,
+        "sha256": "c86363ed7b4f802f1512e439e1613499117e8b5982e16a97c4fde814246d2f1b"
+      },
+      "city-road-life.mjs": {
+        "bytes": 7253,
+        "sha256": "35ac67d82fb0406fa2376f5ac2655686e090b931c05e72b9c1bace108d932d2a"
+      },
+      "city-traffic-paths.mjs": {
+        "bytes": 855,
+        "sha256": "d6271a77463ab6ae1176fbbe20bb530c3f9543771e271fcdc882c963842839ca"
+      },
+      "assets/night-city.json": {
+        "bytes": 45637,
+        "sha256": "5109bb4874c37a288e5cd1ce933dc9267e6e0a2eee1115ca4131f47350df13db"
+      },
+      "assets/night-city/ad-atlas.png": {
+        "bytes": 2606550,
+        "sha256": "6e9449672774f59e71de5f72a07b5b7856ddfa88cd1d96a960551b06e05e8b35"
+      },
+      "assets/night-city/ad-street.png": {
+        "bytes": 2764769,
+        "sha256": "676f90741028ba4aad3bed29c7c0d8b13ec4ae397f780c6677cbd455f695ffef"
+      },
+      "outside-world.mjs": {
+        "bytes": 17699,
+        "sha256": "c1707e919699d462fbd51a9244345f50105f487e21db2ee9694471aa4d48a83d"
+      },
+      "billboard-cycle.mjs": {
+        "bytes": 504,
+        "sha256": "0e31b681b898010038e69f7667e7bd2d5162b75ad7ea7bad9d82d4c47040e80a"
+      },
+      "natural-ui.css": {
+        "bytes": 4328,
+        "sha256": "580c5fee1f107d11589607e026dc7416207474a4b5d7865957bc737a05b69331"
+      },
+      "scene.mjs": {
+        "bytes": 77715,
+        "sha256": "495c0833b16254b3dac1b5440dd264fab5f16b7d89b1498c25a85079b1cb884f"
+      },
+      "night-city.mjs": {
+        "bytes": 11222,
+        "sha256": "4780a003f3e62ab45519490abcae88b6d6927ced79abf87c6d01d9e0cc77ad41"
+      },
+      "night-city-materials.mjs": {
+        "bytes": 14489,
+        "sha256": "1241da95be4ff6bcebce12740591acdf233cada147439cc9c06d2fc2927ffbd5"
+      },
+      "resource-spec.mjs": {
+        "bytes": 6928,
+        "sha256": "583b8225a6309b7419e8d013712d4afc8aaa8134380c25bc8ab289dddb4923a2"
+      },
+      "resource-landing.mjs": {
+        "bytes": 7984,
+        "sha256": "c6865aff5116331da905d4d0d6e5df6551961b029f6990a44e4f35f4344dfccd"
+      },
+      "collision-world.mjs": {
+        "bytes": 8822,
+        "sha256": "f253133f6bff57e69ef417cfd2cc19e9bb51432b732fb450f50e40bcf252d137"
+      },
+      "environment-spec.mjs": {
+        "bytes": 16163,
+        "sha256": "c6a400175a602f83165f7f9661134515d24e786b93635e70c1e775933630b698"
+      },
+      "foot-placement.mjs": {
+        "bytes": 3648,
+        "sha256": "c13ee638d2764d066d8a25ee6baf18f271cd0ee3a1b0a19ea9f42d68ab21f033"
+      },
+      "room-assets.mjs": {
+        "bytes": 4480,
+        "sha256": "3173b54d04e37a47d3d4c07f70d1bf064d062eb0bbd2265d20280479439be311"
+      },
+      "open-habitat.mjs": {
+        "bytes": 6943,
+        "sha256": "2422ae32dff03b65743dcb0e7f19164d7c38758099d347d9bf487347070c4130"
+      },
+      "water-surfaces.mjs": {
+        "bytes": 6323,
+        "sha256": "d27cbfde158ecd30371b5575f6844e35f1c8e8468c497aafe970ab29ce9c6acb"
+      },
+      "browser-life.mjs": {
+        "bytes": 10133,
+        "sha256": "92fed0050577092417aebbcbcbb02ffa37760f53e496760f21bdc63544196708"
+      },
+      "browser-life-worker.mjs": {
+        "bytes": 4570,
+        "sha256": "441ae7e626c5cfe935f4ec73d90e7e32a2aa60c721dd919ea690a89681a9e60b"
+      },
+      "companion-checkpoint.mjs": {
+        "bytes": 9506,
+        "sha256": "d2a2485d8bc642b0ad1300338c2abc96f78de194058cdb316326e9bd21688689"
+      },
+      "companion-learning.mjs": {
+        "bytes": 13575,
+        "sha256": "c822dca97bd7210e9d7ed4fc116b0e13caca130000a146bee5def3651ce99fa5"
+      },
+      "companion-development.mjs": {
+        "bytes": 9210,
+        "sha256": "43fcf8b3aaa61644d19652e0403d5a38aadaaba952358ac2f73b28d0b533f10c"
+      },
+      "companion-evidence.mjs": {
+        "bytes": 1854,
+        "sha256": "493c2e4a98f13354cc9a76122e2d983898160dc264d8ace85a32e7431d099c02"
+      },
+      "companion-ui.mjs": {
+        "bytes": 31704,
+        "sha256": "ccc6c49fe7f3f236da7c41c2615c28641ceca3c8d69edc2acb336095ef618ce9"
+      },
+      "home-onboarding.mjs": {
+        "bytes": 3449,
+        "sha256": "2a7c96dcd690d11fc4063a21cd97a194f82dcd1183338f35faf9ad5aebb32b40"
+      },
+      "pet-care-ui.mjs": {
+        "bytes": 4726,
+        "sha256": "2027344014e35072d210e57c667695ce0f888884168fa8b42a392afa57745042"
+      },
+      "world-spec.mjs": {
+        "bytes": 1995,
+        "sha256": "fa87821d9df51091d883465a1b62fc1fc01bbcb7f502b87020458cccc468f2bf"
+      },
+      "locale-en.json": {
+        "bytes": 35357,
+        "sha256": "288c5d2df05fecb598be021d85bb5c06e08690f46fbc516447d84f10e052945a"
+      },
+      "src/embodied-life.mjs": {
+        "bytes": 30023,
+        "sha256": "207ebedc2b87774d2274f59432955cf79fc0f79883e08e4e313841e0338b1513"
+      },
+      "assets/room-collision.json": {
+        "bytes": 31385,
+        "sha256": "d56e71212aecdeecba371093ab082319cbb187ad20bc09dd8da31070794cb4a9"
+      },
+      "assets/room-collision.bin": {
+        "bytes": 17611160,
+        "sha256": "774a080152fa613af5434058de433cd59ab1c02387288c34006b2c110b8a6dba"
+      },
+      "assets/resource-surfaces.json": {
+        "bytes": 550,
+        "sha256": "0fd1320dae28f444d3ecd01b07130a7cbfc725975776bd1ff2f02be4e1e3b97f"
+      },
+      "food-model-detail.mjs": {
+        "bytes": 25735,
+        "sha256": "f4da496480a7fc379ae916653b43681762fda809776aae65d09bbf1476992ef8"
+      },
+      "interior-refinement.mjs": {
+        "bytes": 16900,
+        "sha256": "993c2bf1146a897efc08775c5f060a300ddb360b8237d9a01823cd0e3dd36e77"
+      },
+      "toilet-model-detail.mjs": {
+        "bytes": 6646,
+        "sha256": "2db9f19484446c46c951a14f64abfcc72a5e371232cdbdf7e58126c80d7b9ccf"
+      },
+      "city-natural-detail.mjs": {
+        "bytes": 4717,
+        "sha256": "cba775be8b1c7e92d86c13c64966c1b056aa9dda8f545a434200fe4d3f3aaa7c"
+      },
+      "home-render-finish.mjs": {
+        "bytes": 4017,
+        "sha256": "2174691ee9b8c8f67446b4a936027e1dfbd35acfbcc364f50d0615ab666224e8"
+      },
+      "render-quality.mjs": {
+        "bytes": 2633,
+        "sha256": "899ce735175705caacc66b41898f720dedfea915c1d5d22a89db91e4e29347e5"
+      },
+      "mesh-batching.mjs": {
+        "bytes": 2081,
+        "sha256": "3ed88a98f72784bd3bc924e4f5b7f0494f49181c4678a34bdf6a8ca0bfbb54a8"
+      },
+      "src/neutral-odor-learning.mjs": {
+        "bytes": 10801,
+        "sha256": "42b85bbb8bb1d5cef04050d5b134fee672f1e331e29a35064b009761bed22f53"
+      },
+      "tapeout-verification.mjs": {
+        "bytes": 3009,
+        "sha256": "1a9f51d25ffd101efeee5a3ee3ce6f41bb219acd925874cfa2456f5f7ef61c42"
+      },
+      "coop-trial.mjs": {
+        "bytes": 6236,
+        "sha256": "7e97d8eb58fe546c89d4d9623c1e76412f7049b0547b8ff02ce18759f64878bb"
+      },
+      "coop-presentation.mjs": {
+        "bytes": 2717,
+        "sha256": "2689a2c476f7f7e058ec6c75b94373b161c42816490210a009f60c28215d4cfb"
+      },
+      "coop-pairing.mjs": {
+        "bytes": 11823,
+        "sha256": "13fac046855d571e647888da46d2b8caf216cecabf3dbddcf34339f9cf99f53c"
+      },
+      "resource-arrival.mjs": {
+        "bytes": 2940,
+        "sha256": "64fbd8b91425267d92c13261468b333a5ee7a575b7b285d8f953d7e79571f8fd"
+      },
+      "route-planner.mjs": {
+        "bytes": 13011,
+        "sha256": "196f8f399330a1786dc34b2dc2707e3dc0343b85078692d56077870161ba24b1"
+      },
+      "coop-clock.mjs": {
+        "bytes": 1676,
+        "sha256": "84b082c61e5b45f037337fb40d44b5aa005085c71db72f41944273618baf2517"
+      },
+      "learned-foraging.mjs": {
+        "bytes": 1048,
+        "sha256": "5616556fbd279c5a3aa165a59ec592cd41bbf1cfeb0850c2c785e877ecbc4c0c"
+      },
+      "mechanical-fly.mjs": {
+        "bytes": 8984,
+        "sha256": "ee391b526e71f835c9a20ec168e756ef5ad41e8a00e8a80a44e7f3e10e64cde7"
+      },
+      "mechanical-view.mjs": {
+        "bytes": 12183,
+        "sha256": "e9cf9bf507a41929b293948eb9203705e9b51d041bbc25bb7e5c168127f57ad5"
+      },
+      "mechanical-room-collision.mjs": {
+        "bytes": 3482,
+        "sha256": "b6b4eea5f5a80b78e8fb9a9992d84d5a9108f5890722404fe1b649245571d61b"
+      },
+      "mirror-campaign.mjs": {
+        "bytes": 13919,
+        "sha256": "f280114b2bc634a0ec0d7821642f29c48b2fc46482397800aa464c5ac4eac1dd"
+      },
+      "mirror-coop-world.mjs": {
+        "bytes": 2488,
+        "sha256": "a4a765d02822c63e68d9bb39326998a116547c128fbcce73f5fab3537505aea6"
+      },
+      "tapeout-circuit.mjs": {
+        "bytes": 15556,
+        "sha256": "0a28c545573b8f505c074b4a7ed56332461b78f84a966262ef012fdd92ae74e4"
+      },
+      "mirror-coop-client.mjs": {
+        "bytes": 11719,
+        "sha256": "8c0969183198b993b247d705119dec57e9bea29f2bf5f8f92bec8de7d6dce6dd"
+      },
+      "mirror-coop-worker.mjs": {
+        "bytes": 8552,
+        "sha256": "1daae4a88edcbccabf203fa1b155594367758e88cac2d33a4a53e862629fd7bf"
+      },
+      "coop.html": {
+        "bytes": 7315,
+        "sha256": "47d1d957959156ef70fb4a8bd1cb9fc34bf95e669ec8ea06a54d2a2852ed8ae5"
+      },
+      "coop.css": {
+        "bytes": 10789,
+        "sha256": "154da236af2a779cbc44bf0b9ceb155dfbc715d0e8d84e3ea8fa42b313da458b"
+      },
+      "coop-app.mjs": {
+        "bytes": 33613,
+        "sha256": "a8112ec57ad1e71302401afb9ccb3138475e6e47b7a98ca7b5cbccf7f7dce94b"
+      },
+      "src/mirror-coop-session.mjs": {
+        "bytes": 26805,
+        "sha256": "2796525f861a0b6ddca974a72ce2de6ab884fb30d93cb1f7daa6d1e3c936ab21"
+      },
+      "src/runtime-clock.mjs": {
+        "bytes": 1356,
+        "sha256": "989f48d131b926744e53d930e78442bc72a0fc30a8711b36b74d46ea1c916ef8"
+      },
+      "training.html": {
+        "bytes": 5848,
+        "sha256": "7503a3768116018278edfcb4c49c1d05e12843303c560003b3717f951665b508"
+      },
+      "training.css": {
+        "bytes": 7980,
+        "sha256": "eab34cac7871d51cad5136ba626c944d964f8e541ba2609bb34cd7b07f2cb824"
+      },
+      "training-app.mjs": {
+        "bytes": 8258,
+        "sha256": "717c351fc0dfe447ab0fcb63da46000317e79d56fed37308ead70885137bd5ea"
+      },
+      "cue-training-client.mjs": {
+        "bytes": 7234,
+        "sha256": "5355b31fa5ce9a387a9f5db2a6e9e1680f6e7a7e60ac25aa0258c79586890cf6"
+      },
+      "cue-training-worker.mjs": {
+        "bytes": 5977,
+        "sha256": "4f4e5a6132589ab47d8329a18bdb1973257ab413975d6e5f7a5343bce6ff642f"
+      },
+      "cue-training-markers.mjs": {
+        "bytes": 3132,
+        "sha256": "d9896053d82bdab6ac14e4c48255b8ed45327a1676fe87a6695baaf74ce4bd14"
+      },
+      "src/cue-training-session.mjs": {
+        "bytes": 12361,
+        "sha256": "cc0ecb2fa2d0cfc29efca0c32ee15a055c88b81f55a4c807bb2998ae3438e5e4"
+      },
+      "src/odor-learning.mjs": {
+        "bytes": 5889,
+        "sha256": "9e8a9329046c1ddf57dafe39f1ca58f31d259b9f84df18fae68e017680ab2392"
+      },
+      "src/mushroom-circuit.mjs": {
+        "bytes": 11126,
+        "sha256": "b1952f3ed90e0c2a7f1871971a7614319dc645583774d46fb61a079bc84cd9b3"
+      },
+      "src/mushroom-connectome.json": {
+        "bytes": 933905,
+        "sha256": "ed90a151008f93b6945b5ce53ec9bba856d4150f9cd4c538805c3c79acb93890"
+      },
+      "synaptic-memory-schema.mjs": {
+        "bytes": 1342,
+        "sha256": "f3eb8856413b88e67da813aec45f69526adfbeea55caceca3d05ff0eacbd4949"
+      },
+      "src/functional-controller.mjs": {
+        "bytes": 13992,
+        "sha256": "cc84732c0daf7e264e7f1c9b99e4fcd83c2e160728e2001e70098799d2b21f2d"
+      },
+      "src/neural-controller.mjs": {
+        "bytes": 24300,
+        "sha256": "01936cf67546ca2da3ff105c0821ff79f4d77e80fa159c4c162c3053eea0b7e6"
+      },
+      "src/neural-core.mjs": {
+        "bytes": 3670,
+        "sha256": "ee336f280176db11e136ac38147736899af3ceba4917608f4d48f9243607d118"
+      },
+      "src/functional-connectome.json": {
+        "bytes": 3980197,
+        "sha256": "bb60bd82b8274e9530c3534ebe02f12284b6baabcddd8d2535088cfb56e6be2c"
+      },
+      "src/functional-calibration.json": {
+        "bytes": 13062,
+        "sha256": "92d9d4bbdbf6a923710a29faa53363a5d7e8584c1da1769c57b3d6525ac071ac"
+      },
+      "navigation-attention.mjs": {
+        "bytes": 7612,
+        "sha256": "c54bf2b9747b9b7fb10e278739c60f9b5289f14b284f163cab401fc2564ea483"
+      },
+      "neural-cadence.mjs": {
+        "bytes": 989,
+        "sha256": "9ee838b597e8f0f0709f8b908ca711588b83bc12f1cf4304233835244b4c427e"
+      },
+      "assets/natural-surfaces/bark-v8.1.0c.png": {
+        "bytes": 3686051,
+        "sha256": "76a1bff75babedb1c8eb4cdc39b5d2a47971a940218b133ea42e5a240739d4af"
+      },
+      "assets/natural-surfaces/bread-v8.1.0c.png": {
+        "bytes": 3519982,
+        "sha256": "ff4e081edb9b93a064d476064d3b9d34c222d21c8e5e9bdfcbaad6a41f9545cc"
+      },
+      "assets/natural-surfaces/limestone-v8.1.0c.png": {
+        "bytes": 3428506,
+        "sha256": "c55053fd1bd299a1b8a217a4f39ecba7b070dd73dc0f746a3e643e84cfbedfdd"
+      },
+      "assets/natural-surfaces/linen-v8.1.0c.png": {
+        "bytes": 3160688,
+        "sha256": "982912210ed347efdedf42f8aade41365347ee06b0ee357255fe8910c4fe400e"
+      },
+      "assets/natural-surfaces/walnut-v8.1.0c.png": {
+        "bytes": 2438687,
+        "sha256": "92dab557b71711a98c807becfb83ef6f5c1058de1b6c88aa9da0edd6f5c39107"
+      },
+      "resource-data.mjs": {
+        "bytes": 1247,
+        "sha256": "8d2f92b35a632e1524b0ba734a97f3acec203c8c1407264836ea1aa15678e242"
+      },
+      "resource-contact.mjs": {
+        "bytes": 7747,
+        "sha256": "e22ade434933a5fdee17aa795b48d7103d8607a9b84e3b0ccafc0011a7a7570c"
+      },
+      "vendor/three/examples/jsm/geometries/RoundedBoxGeometry.js": {
+        "bytes": 6514,
+        "sha256": "ec74e90128d52bb188a7675c1bb61031ee1064f19aa2c0087fe7d83ed1827739"
+      },
+      "vendor/three/examples/jsm/utils/BufferGeometryUtils.js": {
+        "bytes": 37756,
+        "sha256": "7c72b548ac1798acd1425fa129aef2173ad01b41fd3fb56c4eb24b57858d88b2"
+      },
+      "assets/resource-surfaces/apple.json": {
+        "bytes": 955996,
+        "sha256": "9a03766c9efdb701f7167c016eeb5455021f19361005af23de381b4de5c0d097"
+      },
+      "assets/resource-surfaces/banana.json": {
+        "bytes": 370046,
+        "sha256": "3943c75ed42df8b4929c8081f28ab65557e4a2404d66167962c55215ac340c12"
+      },
+      "assets/resource-surfaces/burger.json": {
+        "bytes": 6934756,
+        "sha256": "09b2aec5de84e1ecb82250529cc21ec64652f363b12ee3b74cf47cf42752e44f"
+      },
+      "assets/resource-surfaces/fig.json": {
+        "bytes": 9580378,
+        "sha256": "00c0a5ad57246211334e1ba090d3278b73c59b338d5289d21dbd6fc3a0eff960"
+      },
+      "assets/resource-surfaces/fries.json": {
+        "bytes": 1768320,
+        "sha256": "570fb8d04d74b643b3627b76da71d438b9f95a760c427e00b5ae018de67e4252"
+      },
+      "assets/resource-surfaces/pizza.json": {
+        "bytes": 12989867,
+        "sha256": "2b00313a561ebaf368fe1360851b85bf8c5d5a0cea31f83c577e27c6992fc4ca"
+      },
+      "assets/resource-surfaces/sandwich.json": {
+        "bytes": 3830601,
+        "sha256": "1a5410d31a12117bf12dd86a9b7a06c90772cd7cccf68215eab2dd0c38674500"
+      },
+      "assets/resource-surfaces/shallow-pool.json": {
+        "bytes": 6274,
+        "sha256": "dcd16907e6bbb88d930ed4f4628eab91625a84af389dbd928dbadef1d0f8a4b9"
+      },
+      "assets/resource-surfaces/water-bowl.json": {
+        "bytes": 4607,
+        "sha256": "f2164980b47f3a121850b740d43f6cf60e88e41686b79525591a357bf6ac737e"
+      },
+      "THIRD_PARTY_NOTICES.md": {
+        "bytes": 9219,
+        "sha256": "283c0ba1dbc64d05751d88bfb05d169910d34857f7e45bdfbe4e0b31f4403ee8"
+      },
+      "vendor/three/examples/jsm/controls/OrbitControls.js": {
+        "bytes": 40799,
+        "sha256": "74e0f9ca6a910bb1ec5baff247b811f866f8c015f13427420f6e0a9d90bc175a"
+      },
+      "vendor/three/examples/jsm/environments/RoomEnvironment.js": {
+        "bytes": 5004,
+        "sha256": "674245ce4ecca16e3781b9b4bc85c7528c643141a1d3d70ed721064ebf040cca"
+      },
+      "vendor/three/examples/jsm/exporters/GLTFExporter.js": {
+        "bytes": 93614,
+        "sha256": "ce3f3365e529f860638179f3c4453d2155690697a47c27124830a29ef8aeefa7"
+      },
+      "vendor/three/examples/jsm/loaders/GLTFLoader.js": {
+        "bytes": 117614,
+        "sha256": "8cbd1c011e2e17daa648dc61f6e26e0470f6114db409d5b23ea36c4caf0b5b27"
+      },
+      "vendor/three/examples/jsm/objects/Reflector.js": {
+        "bytes": 10987,
+        "sha256": "e90a9d63b4261011ee6cbf4e495918a214bce47e2881a7d264519c75a68c7e8b"
+      },
+      "vendor/three/examples/jsm/postprocessing/EffectComposer.js": {
+        "bytes": 8545,
+        "sha256": "e2cbfd82f91aeb6d5340dc6a409277d4d9ac8fcba844890526c035d69f7ea0a9"
+      },
+      "vendor/three/examples/jsm/postprocessing/MaskPass.js": {
+        "bytes": 4708,
+        "sha256": "510e6e21aeaa43a7f1d8db075979c5b59828379622dbb74ecbd8e55cdaced099"
+      },
+      "vendor/three/examples/jsm/postprocessing/OutputPass.js": {
+        "bytes": 4228,
+        "sha256": "3f11b810752ed396f4ed11db09465c43dbc53c675978d442346f0e440d7a9a40"
+      },
+      "vendor/three/examples/jsm/postprocessing/Pass.js": {
+        "bytes": 4276,
+        "sha256": "3c990b36e8995708d66c617587a346035e8c955d871fc588cb968e00314192dd"
+      },
+      "vendor/three/examples/jsm/postprocessing/RenderPass.js": {
+        "bytes": 4324,
+        "sha256": "440b56132f4564d67dac283c82988c79ba83f03f2ae910ffde786a467477a2c9"
+      },
+      "vendor/three/examples/jsm/postprocessing/ShaderPass.js": {
+        "bytes": 3272,
+        "sha256": "8be1e0aad3b25e4d910082780cbcaf168e85070804b79d122fe733bca360ed5d"
+      },
+      "vendor/three/examples/jsm/shaders/CopyShader.js": {
+        "bytes": 743,
+        "sha256": "5ff9762fcdd804d92db3063f71f3aedcb0f365adc470e5b1e3bba72e64bc6452"
+      },
+      "vendor/three/examples/jsm/shaders/OutputShader.js": {
+        "bytes": 1890,
+        "sha256": "2ef61a52dddaa56c637a3698d441674b0c521639ee8dd398150938e54fadad62"
+      },
+      "vendor/three/examples/jsm/utils/SkeletonUtils.js": {
+        "bytes": 11579,
+        "sha256": "fed0955e1ea9187b44bb29829f9639590189ad5ee62f91309d6732f194ed4d68"
+      },
+      "licenses/aes-js-installed-4.0.0-beta.5-MIT.txt": {
+        "bytes": 1081,
+        "sha256": "fca281420c800a4aae284a3b478b48b7a8d83c37285bbf2512bf52a5d597a503"
+      },
+      "licenses/CC-BY-4.0.txt": {
+        "bytes": 18657,
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+      },
+      "licenses/CC-BY-NC-4.0.txt": {
+        "bytes": 19347,
+        "sha256": "41003d4a74749c0220e33dd415042164b5a1093ed401f36277234f772d22d3d0"
+      },
+      "licenses/CC0-1.0.txt": {
+        "bytes": 7048,
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+      },
+      "licenses/Drosophila-brain-model-MIT.txt": {
+        "bytes": 1085,
+        "sha256": "3621f6d6476189190e2960fa43f11b275ba4eca848fdac50a1ba2925de6223e8"
+      },
+      "licenses/ens-normalize-1.11.1-MIT.txt": {
+        "bytes": 1077,
+        "sha256": "3b458813ab3316b16bf004c4201d4a0583cf615514422dabf4d7c025988d613d"
+      },
+      "licenses/ethers-6.17.0-MIT.txt": {
+        "bytes": 1075,
+        "sha256": "44eea86637405118248327fbe9d9fa95d04c7a57221c7e8c155f736db9f1b612"
+      },
+      "licenses/Kenney-Food-Kit-2.0-CC0.txt": {
+        "bytes": 711,
+        "sha256": "32a081c2035dd4db47d850c83244da048165f0e53d71c076b76c1afc0590bc7f"
+      },
+      "licenses/Kenney-Furniture-Kit-2.0-CC0.txt": {
+        "bytes": 614,
+        "sha256": "bc0de1a0742cb490f9ed4bae0bd284286ebb27e23149b9917c7d8c0d590b8b29"
+      },
+      "licenses/Kenney-Nature-Kit-2.1-CC0.txt": {
+        "bytes": 611,
+        "sha256": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d"
+      },
+      "licenses/noble-curves-1.2.0-MIT.txt": {
+        "bytes": 1109,
+        "sha256": "4f221aee6e072336700c408c68ab3b96a3fc09f6aebe6f48f1bd99e5ef13faec"
+      },
+      "licenses/noble-hashes-1.3.2-MIT.txt": {
+        "bytes": 1109,
+        "sha256": "4f221aee6e072336700c408c68ab3b96a3fc09f6aebe6f48f1bd99e5ef13faec"
+      },
+      "licenses/TapeOut-TAPs-LICENSE.txt": {
+        "bytes": 1581,
+        "sha256": "c828d20c8c1ad7f4b3f4e2b4de6efdda00be1d678a99e63ec555bef3e7e06d45"
+      },
+      "licenses/three-0.186.0-MIT.txt": {
+        "bytes": 1081,
+        "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+      },
+      "licenses/tslib-2.7.0-0BSD.txt": {
+        "bytes": 655,
+        "sha256": "210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751"
+      },
+      "licenses/tslib-2.7.0-CopyrightNotice.txt": {
+        "bytes": 822,
+        "sha256": "da16ddb65f8ca390998fb99223d0112498b56b45784d00afd77ff8ce1ac4de8b"
+      },
+      "licenses/types-node-22.7.5-MIT.txt": {
+        "bytes": 1141,
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      },
+      "licenses/undici-types-6.19.8-MIT.txt": {
+        "bytes": 1090,
+        "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27"
+      },
+      "licenses/ws-8.21.0-MIT.txt": {
+        "bytes": 1183,
+        "sha256": "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef"
+      }
+    }
+  },
+  "campaign": {
+    "seed": 8501,
+    "developmentIndividual": true,
+    "freshIndependentScientificSample": false,
+    "stagesNaturallyCompleted": 12,
+    "unassistedProbePreferenceIndex": -0.030510205089326052
+  },
+  "publicBrowser": {
+    "checks": [
+      "actual completed campaign imported while paused",
+      "native import and autosave preserve complete body and q",
+      "paused import remains stopped after its menu closes",
+      "visible menu exports a stable current paused body and q",
+      "both trials unlock from actual completion",
+      "courier trial accepts a real keyboard pickup",
+      "signal trial completes through real keyboard flight, phase interaction and circuit pulses",
+      "trial retry retains earned history",
+      "leaving trial returns to free life with history"
+    ],
+    "coldSeconds": 31.349,
+    "httpErrors": 0,
+    "pageErrors": 0,
+    "consoleErrors": 0
+  },
+  "qOnlyAudit": {
+    "kind": "existing-native-individual-q-only-audit",
+    "freshSample": false,
+    "seed": 8501,
+    "seconds": 20,
+    "fixtures": {
+      "trained-start.json": {
+        "sha256": "ea22350a2c9b8981c94a1076edd9124fb417ef5d39aaa6ec005ac6a161698144",
+        "bytes": 368597,
+        "sourceCheckpoint": "10-independent-choice-after-checkpoint.json"
+      },
+      "pre-training.json": {
+        "sha256": "6a4e8fe8d073f2f19d68970a7274ace2e25b1268ea26427cc22bde855889f3f8",
+        "bytes": 385552,
+        "sourceCheckpoint": "08-paired-scent-before-checkpoint.json"
+      }
+    },
+    "claims": {
+      "sameAsOriginalNativeProbe": false,
+      "newTeaching": false,
+      "independentPopulationEvidence": false
+    },
+    "mappings": [
+      {
+        "swapped": false,
+        "conditions": [
+          {
+            "condition": "learned",
+            "tailPreferenceA": 0.188144650829623,
+            "qHash": "074207163aa053a594620743ad2e8386dd15b38903cf0b47722275a380a4b098",
+            "brainStepDelta": 23200,
+            "rows": 1001
+          },
+          {
+            "condition": "erased",
+            "tailPreferenceA": 0.0018818686988156673,
+            "qHash": "150958dbd5ed4579b739fe28279bf70eeae7045c293583ddd72553d680ae74be",
+            "brainStepDelta": 8000,
+            "rows": 1001
+          },
+          {
+            "condition": "restored",
+            "tailPreferenceA": 0.188144650829623,
+            "qHash": "074207163aa053a594620743ad2e8386dd15b38903cf0b47722275a380a4b098",
+            "brainStepDelta": 23200,
+            "rows": 1001
+          }
+        ],
+        "deltaPreferenceA": 0.18626278213080735,
+        "firstRestoreMismatch": null,
+        "commonCheckpointMatched": true
+      },
+      {
+        "swapped": true,
+        "conditions": [
+          {
+            "condition": "learned",
+            "tailPreferenceA": 0.5609293058194342,
+            "qHash": "074207163aa053a594620743ad2e8386dd15b38903cf0b47722275a380a4b098",
+            "brainStepDelta": 9200,
+            "rows": 1001
+          },
+          {
+            "condition": "erased",
+            "tailPreferenceA": 0.2415088388384871,
+            "qHash": "150958dbd5ed4579b739fe28279bf70eeae7045c293583ddd72553d680ae74be",
+            "brainStepDelta": 9600,
+            "rows": 1001
+          },
+          {
+            "condition": "restored",
+            "tailPreferenceA": 0.5609293058194342,
+            "qHash": "074207163aa053a594620743ad2e8386dd15b38903cf0b47722275a380a4b098",
+            "brainStepDelta": 9200,
+            "rows": 1001
+          }
+        ],
+        "deltaPreferenceA": 0.3194204669809471,
+        "firstRestoreMismatch": null,
+        "commonCheckpointMatched": true
+      }
+    ]
+  },
+  "tapeout": {
+    "chainId": 196,
+    "factory": "0x1f09daefa827f02cbb40967cc91b259763760761",
+    "cpu": "0x839bdd6fa7a66416a609a735e11de5411b98574e",
+    "xorCircuitId": 1,
+    "pulseReferenceCircuitId": 4,
+    "pulseCpu": "0xf044d395c91e77459e6b2155015e14f0dd9b349f",
+    "pulseNativeCircuitId": 102,
+    "localClockSeconds": 0.4,
+    "execution": "local execution of fixed on-chain netlists; optional read-only eth_call verification"
+  },
+  "humanAcceptance": {
+    "realPhone": false,
+    "externalPlayer": false
+  },
+  "owner": "Unclecow"
+}

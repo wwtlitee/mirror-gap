@@ -1,0 +1,92 @@
+/* Keep the room's existing edge layout; separate care, observation and preferences. */
+#settings-toggle{position:fixed;top:22px;right:26px;min-width:62px;min-height:36px;padding:7px 13px;background:#121b17e6;border:1px solid #ffffff24;border-radius:6px;font-size:13px}
+#neural-drawer-toggle{right:103px}
+.companion-trigger{left:245px}
+.house-meta{padding:5px 8px;background:#121b1799;border-radius:4px}
+.hud-status.is-collapsed #needs{display:none}
+#body-details{margin-top:12px;border-top:1px solid #cad3be30;padding-top:12px}
+#body-details summary{cursor:pointer;font-size:13px;min-height:30px;color:#d7e1ce}
+#body-details summary span{font-size:11px;color:#a7b7a2;margin-left:8px}
+.section-description{font-size:12px;line-height:1.7;color:#aebbab;margin:8px 0 16px}
+#body-needs .need{grid-template-columns:minmax(0,1fr);padding-right:102px}
+#body-details .section-description{font-size:11px;margin:0 0 8px}
+.hud-status{max-height:calc(100svh - 225px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:#61745b transparent}
+.hud-status .needs-section>.section-heading{position:sticky;top:-16px;z-index:2;padding:8px 0;background:#142018}
+.observation-section{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #cad3be26}
+.observation-section h3,#neural-details>h3{font-size:15px;font-weight:600;margin:0 0 16px}
+#behavior-explanation .activity-reason{font-size:14px;color:#dce5d5;margin:0;min-height:0}
+#behavior-explanation .sense-line{display:block;font-size:13px;margin-top:16px}
+#behavior-explanation .dock-label{display:block;margin-bottom:6px}
+#behavior-explanation #motion-explanation{font-size:13px;padding:0;background:none;border:0;color:#b6c6ad}
+#observation-metrics{padding:4px 0 18px}
+#room-interactions:empty{display:none}
+#room-interactions section{padding-bottom:18px;margin-top:0}
+#room-interactions h3{font-size:15px;font-weight:600;margin:0 0 12px}
+#room-interactions .companion-actions button{background:#203025;border:1px solid #cad3be26;border-radius:5px;padding:8px 12px}
+#settings-dialog{width:min(780px,calc(100vw - 40px));max-width:780px;height:min(690px,calc(100dvh - 64px));max-height:none;padding:0;border:1px solid #a4b29b38;border-radius:10px;background:#131d18;color:#f3f2e9;overflow:hidden;box-shadow:0 24px 90px #0007;line-height:1.6}
+#settings-dialog[open]{display:flex;flex-direction:column}
+#settings-dialog::backdrop{background:#060c09b3}
+.settings-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 24px 18px;border-bottom:1px solid #ffffff16;flex:none}
+.settings-heading h2{font:600 22px "Segoe UI","Microsoft YaHei",sans-serif;color:#f3f2e9;margin:0 0 5px}
+.settings-heading p{font-size:12px;color:#aebbab;margin:0;line-height:1.6}
+.settings-heading>button{font-size:24px;width:36px;height:36px;flex:none;padding:0;border-radius:5px}
+.settings-layout{display:grid;grid-template-columns:156px minmax(0,1fr);flex:1;min-height:0}
+.settings-nav{display:flex;flex-direction:column;gap:6px;padding:18px 12px;background:#0e1712;border-right:1px solid #ffffff12}
+.settings-nav button{text-align:left;border-radius:6px;padding:10px 12px;line-height:1.5;color:#adbbaa;font-size:13px}
+.settings-nav button[aria-selected=true]{color:#f1eedc;background:#b9c99e1c;box-shadow:inset 2px 0 #bdcda7}
+.settings-content{overflow:auto;scrollbar-width:thin;min-width:0;overscroll-behavior:contain}
+.settings-content>[role=tabpanel]{padding:24px;min-height:100%;outline-offset:-3px}
+.settings-content h3{font-size:15px;font-weight:600;line-height:1.5;margin:0 0 14px}
+.settings-content .settings-group,.settings-content #settings-voice>section,.settings-content #settings-backup>section{padding:0 0 22px;margin:0 0 22px;border-top:0;border-bottom:1px solid #ffffff16}
+.settings-content .settings-group:last-child,.settings-content #settings-backup>section{margin-bottom:0;border-bottom:0}
+.settings-content button{padding:8px 12px;font-size:13px;border:1px solid #ffffff28;border-radius:6px;background:#ffffff05;min-height:38px}
+.settings-content button:hover{background:#ffffff10;border-color:#ffffff40}
+.settings-content label{display:block;font-size:13px;color:#d0d9ca;margin:12px 0 7px}
+.settings-content .companion-check,.settings-content .settings-check{display:flex;gap:9px;align-items:center;min-height:32px}
+.settings-content .companion-inline{flex-wrap:wrap}
+.settings-content .companion-inline label{margin:0}
+.settings-content input[type=range]{display:block;width:100%;accent-color:#b9c99e;min-height:28px;margin:4px 0}
+.settings-content input[type=checkbox]{accent-color:#b9c99e;width:16px;height:16px;flex:none}
+.settings-content select{width:100%;padding:10px 12px;border:1px solid #ffffff28;border-radius:6px;font:inherit;color:#f0efdf;background:#1c2b21;min-height:40px}
+.settings-content .companion-fine{font-size:12px;line-height:1.75;color:#a4b5a3;margin-top:12px}
+.settings-content .language-switch{margin:0;gap:8px}
+.settings-content .language-switch button{min-width:72px}
+.settings-content .language-switch span{display:none}
+.settings-actions{display:flex;gap:10px;flex-wrap:wrap}
+.settings-actions #about-button{position:static;display:block;width:auto;height:auto;font-size:13px}
+.runtime-info{font-size:13px;margin:0}
+.runtime-info>div{display:grid;grid-template-columns:84px minmax(0,1fr);gap:12px;padding:11px 0;border-bottom:1px solid #ffffff0c}
+.runtime-info dt{color:#a4b5a3}.runtime-info dd{margin:0;overflow-wrap:anywhere;color:#e5ecdc}
+.runtime-info .version{font-size:13px;color:inherit}
+.runtime-info .connection{font-size:13px;color:inherit}
+.runtime-info .time-controls{flex-wrap:wrap;color:inherit;font-size:13px}
+.runtime-info #render-rate{font:12px ui-monospace,Consolas,monospace}
+#settings-save{color:#b9c99e;font-size:13px}
+#settings-identity .companion-fine{font-family:ui-monospace,Consolas,monospace;font-size:11px}
+.companion-settings-links{border-top:1px solid #ffffff16;padding-top:18px;margin-top:22px}
+@media(max-width:1000px) and (min-width:701px){.companion-trigger{left:auto}}
+@media(max-width:1200px){.orbit-hint{display:block;top:74px;bottom:auto;right:auto;left:50%;transform:translateX(-50%);width:max-content;font-size:11px;pointer-events:none}}
+@media(max-width:700px){
+ #settings-toggle{top:16px;right:14px;min-height:36px}
+ #neural-drawer-toggle,.habitat-tools-toggle,.companion-trigger{top:auto;bottom:55px;width:calc((100vw - 44px)/3);min-height:44px;padding:7px 5px;font-size:12px;line-height:1.4;text-align:center;background:#121b17eb;border:1px solid #ffffff20;border-radius:6px}
+ #neural-drawer-toggle{right:auto;left:50%;transform:translateX(-50%)}
+ #neural-drawer-toggle:active{transform:translateX(-50%) translateY(1px)}
+ .habitat-tools-toggle{left:14px}.companion-trigger{left:auto;right:14px}
+ #neural-drawer-toggle span,.habitat-tools-toggle span{display:none}
+ .hud-status{max-height:calc(100svh - 340px)}
+ .hud-status .needs-section>.section-heading{top:-10px}
+ #body-needs .need{padding-right:112px}
+ .house-meta{bottom:9px;left:14px;max-width:calc(100vw - 28px)}
+ .orbit-hint{top:119px;font-size:10px;padding:2px 6px}
+ #settings-dialog{width:calc(100vw - 20px);height:calc(100dvh - 32px);border-radius:9px}
+ .settings-heading{padding:16px}.settings-heading h2{font-size:20px}.settings-heading p{font-size:11px}
+ .settings-layout{display:flex;flex-direction:column}
+ .settings-nav{display:grid;grid-template-columns:1fr 1fr;padding:10px;gap:4px;border-right:0;border-bottom:1px solid #ffffff16;flex:none}
+ .settings-nav button{text-align:center;padding:9px 5px;font-size:12px}
+ .settings-nav button[aria-selected=true]{box-shadow:inset 0 -2px #bdcda7}
+ .settings-content{flex:1}.settings-content>[role=tabpanel]{padding:18px}
+ .settings-content .companion-fine{font-size:11px}
+ .runtime-info>div{grid-template-columns:70px minmax(0,1fr)}
+}
+@media(max-height:500px) and (max-width:700px){.hud-status{max-height:calc(100svh - 164px)}.settings-heading p{display:none}.settings-heading{padding:10px 16px}.settings-nav{padding:5px 10px;grid-template-columns:repeat(4,1fr)}.settings-nav button{font-size:11px}}
+@media(max-width:380px){.view-switch button{padding:8px;font-size:12px}.scene-toolbar{gap:5px}.scene-toolbar>.icon-button{width:36px;min-width:36px;flex-shrink:0}}

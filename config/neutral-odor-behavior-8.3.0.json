@@ -1,0 +1,42 @@
+{
+  "format": 1,
+  "productVersion": "8.3.0",
+  "modelVersion": "0.0.1a",
+  "phase": "held-out-neutral-behavior",
+  "seeds": [6100,6101,6102,6103,6104,6105,6106,6107],
+  "pilotSeeds": [3100,3101],
+  "workers": 3,
+  "training": {
+    "trials": 6,
+    "trialSeconds": 14,
+    "food": "burger",
+    "actualConsumptionRequired": true,
+    "consumptionTicksPerTrial": 1,
+    "requiredRewardPulses": 6,
+    "maxFirstBiteSeconds": 3,
+    "pairedPostBiteSeconds": 1,
+    "unpairedGapSeconds": 3,
+    "traceTolerance": 1e-8,
+    "cueRule": "even-A-odd-B",
+    "cueExposure": "full-field-source-follows-body-during-training-only",
+    "standardExposure": "place-on-real-food-surface-no-autonomous-foraging-claim"
+  },
+  "probe": {
+    "seconds": 20,
+    "analysisWindowSeconds": 10,
+    "stepSeconds": 0.02,
+    "sampleEverySeconds": 0.1,
+    "frozen": true,
+    "rewardEnabled": false,
+    "originalFoodNavigation": true,
+    "foods": {"apple":0,"banana":0,"burger":0,"pizza":0,"fries":0,"sandwich":0,"fig":0}
+  },
+  "release": {"x":-3.6,"z":1.5,"surfaceSearchY":1.5,"surfaceSearchDistance":1,"heightScale":0.09,"heightEpsilon":0.0001,"requiredSupportedFeet":6,"headingRule":"seed%4<2?0:pi"},
+  "identity": {"id":"33333333-3333-4333-8333-333333333333","seed":"0123456789abcdef0123456789abcdef","createdAt":1000,"adoptedAt":2000,"name":"中性气味实验"},
+  "body": {"satiety":25,"thirst":0.1,"contactSeconds":4,"focus":"eat","hour":12},
+  "cueSources": {"left":{"position":[-3.6,1.05,0.85],"strength":1,"range":1},"right":{"position":[-3.6,1.05,2.15],"strength":1,"range":1}},
+  "mappings": {"native":{"left":"A","right":"B"},"swapped":{"left":"B","right":"A"}},
+  "conditions": ["baseline","paired","unpaired","frozen","erased","restored"],
+  "criteria": {"primaryMetric":"tail-time-mean-distance-preference-change","preferenceFormula":"(d_CSminus-d_CSplus)/(d_CSminus+d_CSplus)","directionFractionMin":0.75,"meanPairedOverUnpairedMin":0.2,"meanPairedOverFrozenMin":0.2,"baselineMeanAbsMax":0.2,"positiveIsStrict":true,"nativeAndSwappedRequired":true,"exactCausalControlsRequired":true,"initialCueNoCueTrajectoryEqualityRequired":true},
+  "originalMotorGraphSHA256":"bb60bd82b8274e9530c3534ebe02f12284b6baabcddd8d2535088cfb56e6be2c"
+}

@@ -1,0 +1,31 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE??'file:///C:/Users/39215/.codex/skills/develop-web-game/node_modules/playwright/index.mjs');
+const url=process.env.ADOPTION_TEST_URL??'http://127.0.0.1:4217/';
+const output=process.env.ADOPTION_TEST_OUTPUT??'output/natural-home-v8.1.0/adoption';
+const report={url,checks:[],errors:[],consoleErrors:[]};await fs.mkdir(output,{recursive:true});
+const check=(label,value)=>{assert.ok(value,label);report.checks.push(label);};
+const browser=await chromium.launch({headless:true,args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']});
+try{
+  const context=await browser.newContext({viewport:{width:1280,height:900}}),page=await context.newPage();
+  page.on('pageerror',e=>report.errors.push(e.message));page.on('console',m=>{if(m.type()==='error')report.consoleErrors.push(m.text());});
+  const state=()=>page.evaluate(()=>JSON.parse(window.render_game_to_text()));
+  const ready=()=>page.waitForFunction(()=>document.body.dataset.scene==='ready'&&JSON.parse(window.render_game_to_text()).connected,null,{timeout:120000});
+  await page.goto(url);await ready();await page.waitForFunction(()=>document.querySelector('#adoption-dialog').open);
+  check('fresh browser presents the actual adoption flow',!(await state()).companion.identity.adoptedAt);
+  await page.screenshot({path:output+'/fresh-adoption.png'});await page.fill('#adoption-name','新养自然豆');await page.uncheck('#adoption-voice');await page.click('#adoption-submit');
+  await page.waitForFunction(()=>document.querySelector('#home-intro').open);
+  const adopted=(await state()).companion.identity;
+  check('name and identity are created by the real adoption API',adopted.name==='新养自然豆'&&Boolean(adopted.adoptedAt));
+  check('successful adoption automatically opens the introduction',await page.locator('#home-intro-title').innerText()==='先看看它');
+  await page.screenshot({path:output+'/adopted-introduction.png'});await page.click('#home-intro-skip');
+  await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).companion.activeSeconds>0&&Boolean(JSON.parse(localStorage.getItem('mirror-gap-companion-v2')).companion.identity.adoptedAt));
+  check('life runs and the adopted identity reaches actual browser storage',(await state()).companion.activeSeconds>0);
+  await page.reload();await ready();
+  const restored=(await state()).companion.identity;
+  check('reload keeps the exact identity and appearance seed',restored.id===adopted.id&&restored.seed===adopted.seed&&restored.name===adopted.name);
+  check('returning companion is not forced through adoption or introduction',!await page.locator('#adoption-dialog').evaluate(el=>el.open)&&!await page.locator('#home-intro').evaluate(el=>el.open));
+  await page.screenshot({path:output+'/returning-companion.png'});
+  check('no uncaught or console errors',report.errors.length===0&&report.consoleErrors.length===0);report.passed=true;
+}catch(error){report.failure=error.stack;report.passed=false;process.exitCode=1;}finally{await browser.close();await fs.writeFile(output+'/report.json',JSON.stringify(report,null,2));}
+console.log(JSON.stringify(report));

@@ -1,0 +1,13 @@
+{
+  "name": "mirror-gap-tapeout",
+  "main": "workers/coop-entry.mjs",
+  "compatibility_date": "2026-10-23",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none",
+    "run_worker_first": ["/"]
+  }
+}
