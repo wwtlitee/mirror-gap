@@ -2,7 +2,7 @@
   "format": 1,
   "product": "Mirror Gap",
   "productVersion": "8.5.0",
-  "createdAt": "2026-10-23T10:22:44.425Z",
+  "createdAt": "2026-10-23T10:25:15.042Z",
   "files": {
     ".github/workflows/ci.yml": {
       "bytes": 408,
@@ -2457,8 +2457,8 @@
       "sha256": "927df580e57a360027aa9469931de7e46e69db627ab01527e0741860db85fd48"
     },
     "scripts/audit-native-coop-learning.mjs": {
-      "bytes": 6260,
-      "sha256": "11c595ea5763b5fd256d0f5e0ef3ded76af107927904137b3e1389c1ed8868ef"
+      "bytes": 6326,
+      "sha256": "036f9ac61c8052613a71ccff153f1bd61233a8e183f5ac03a3bf8fe20c401048"
     },
     "scripts/audit-neutral-odor.py": {
       "bytes": 41390,

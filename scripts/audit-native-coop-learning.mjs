@@ -12,6 +12,7 @@ if(!startFile||!baselineFile||!out||process.argv.length!==5)throw Error('Usage: 
 const startBytes=await fs.readFile(startFile),baselineBytes=await fs.readFile(baselineFile);
 const start=JSON.parse(startBytes),baseline=JSON.parse(baselineBytes);
 if(start.coop?.campaign?.stage!==10||baseline.coop?.campaign?.stage!==8||start.coop.seed!==baseline.coop.seed)throw Error('Use the same native individual at stage10 and its stage8 baseline');
+await fs.mkdir(path.dirname(path.resolve(out)),{recursive:true});
 await fs.mkdir(out);
 const closure=collectGuidanceClosure({entrypoints:['src/embodied-life.mjs','scripts/audit-native-coop-learning.mjs']});
 const learned=start.body.synapticMemory.efficacy,erased=baseline.body.synapticMemory.efficacy;
