@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "protocolId": "learned-guidance-8.5.0-preregistered-v1",
+  "productVersion": "8.5.0",
+  "methodReview": "root-methods-confirmed-pending-exact-config-hash-review",
+  "phase": "fresh-development-validation",
+  "seeds": [9300, 9301, 9302, 9303, 9304, 9305, 9306, 9307, 9308, 9309, 9310, 9311, 9312, 9313, 9314, 9315],
+  "targetRule": "even-seed-A-odd-seed-B",
+  "workerConcurrency": 1,
+  "stepSeconds": 0.02,
+  "preTraining": {
+    "constructor": "CueTrainingSession",
+    "sharedCheckpoint": "After one 20ms cue-off natural step, before any consumption or teaching; retain all body, pending original-brain, RNG and MB activity.",
+    "identity": "One logical individual per seed, cloned into paired and frozen histories; no daily save or original-game writes.",
+    "bodyOrNeedsResetAfterCheckpoint": false
+  },
+  "training": {
+    "minSeconds": 12,
+    "maxSeconds": 30,
+    "minActualTeachingEvents": 2,
+    "stopRule": "First 20ms boundary with elapsed>=12 and actual consumption-gated teachingEvents>=2; otherwise fail at 30s.",
+    "reward": "Only EmbodiedLife actual consumeFood feedback; no synthetic teaching, refill, pose, route or focus writes.",
+    "cue": {"position": [-3.43, 1.12, 1.33], "strength": 1, "range": 2},
+    "paired": {"frozen": false, "rewardEnabled": true},
+    "frozen": {
+      "frozen": true,
+      "rewardEnabled": true,
+      "start": "Exact same pre-training body/original-brain/pending/RNG/MB checkpoint as paired.",
+      "teachingYoke": "Match the paired history's actual consumption-gated teaching-event count, respecting 12..30s; overshoot or insufficient intake is a retained control failure.",
+      "intakeEvidence": "Record positive-consumption physics ticks and total actual amount as well; retain all physical and intake differences.",
+      "postTrainingState": "Preserve its own natural body, original brain and MB activity; do not silently transplant paired physiology."
+    }
+  },
+  "probe": {
+    "seconds": 8,
+    "tailStartExclusive": 4,
+    "tailEndInclusive": 8,
+    "axis": "x",
+    "offsetMetres": 0.65,
+    "cueStrength": 1,
+    "cueRange": 1.2,
+    "geometry": "Body-centered X+/-.65m, unchanged Y/Z; declared before learning outcome; no alternate axis or favorable retry.",
+    "mappings": ["native", "swapped"],
+    "conditions": ["learned", "erased", "frozen", "restored"],
+    "commonInitialState": "learned/erased/restored share the exact paired post-training body, original brain, pending frame, RNG and live MB state; each mapping restarts from that same checkpoint. Frozen uses its own post-training checkpoint for both mappings and its physical differences are reported.",
+    "erased": "Only plastic efficacies become q=1; preserve every other live state and invalidate only derived q-readout caches.",
+    "restored": "On an unadvanced erased clone, load validated serialized paired q and preserve all non-q states. Compare every 20ms physical/neural/MB state against learned. This is a q-memory control, not a full UI save/reload claim.",
+    "frozen": true,
+    "rewardEnabled": false,
+    "foodTotal": 0,
+    "restoreInventoryAndFlags": true,
+    "occlusion": "Check both fixed source segments under the food-free collision mask; any blocked source is a retained failure, no axis search.",
+    "urgentActions": ["drink", "toilet", "rest", "clean"],
+    "urgentPolicy": "Urgent non-food demand before or during a probe is a retained failure; do not suppress needs or force focus.",
+    "rawEvidence": "Every20ms: body pose/velocity/needs, original brain and pending/RNG hashes, live MB non-q activity hash, q hash, cue positions, sensory/motor, actual food/reward counters and flags."
+  },
+  "primary": {
+    "metric": "Tail mean preference for trained odor: (distanceOther-distanceTrained)/(distanceOther+distanceTrained), t in (4,8].",
+    "perMappingRequiredPositiveSeeds": 12,
+    "perSeedRule": "Valid paired observation with learned tail preference>0 and learned-erased improvement>0.",
+    "perMappingMeanImprovementGreaterThan": 0.15,
+    "denominator": 16,
+    "failedOrMissingContribution": 0,
+    "failedOrMissingPolicy": "Retain every assigned seed in the 16-seed denominator. Zero is a predeclared failure contribution, never an invented observed preference. Also report valid-only mean, missing/invalid counts and [-2,+2] improvement identification bounds.",
+    "bothMappingsRequired": true,
+    "subgroups": ["trained-A-even-seeds", "trained-B-odd-seeds"],
+    "reportAllFailures": true,
+    "restoreRequirement": "Exact learned/restored replay at every 20ms step, not only final pose or PI.",
+    "frozenRequirement": "No q change during frozen training and probes; real intake/teaching count matched or the seed is retained as a failure."
+  },
+  "sourceLock": {
+    "policy": "Lock validation procedure and complete transitive local runtime code/data closure, plus dependency manifests, before authorized execution; verify at every seed boundary and after the cohort.",
+    "noCoreChangesDuringRun": true,
+    "executionRequiresRootMethodApproval": true,
+    "forbiddenSeeds": [6100, 6101, 6102, 6103, 6104, 6105, 6106, 6107]
+  },
+  "claims": {
+    "newHeldout6100Evidence": false,
+    "fullCoopPlayerAcceptance": false,
+    "scientificLearningSuccess": null,
+    "description": "Predeclared fresh development cohort; no animal run is authorized until method review and immutable source/protocol lock."
+  }
+}

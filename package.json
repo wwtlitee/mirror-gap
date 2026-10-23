@@ -1,0 +1,28 @@
+{
+  "name": "drosophila-home",
+  "version": "8.5.0",
+  "private": true,
+  "type": "module",
+  "description": "果蝇之家 — 一个持续生活的本地三维空间",
+  "scripts": {
+    "start": "node scripts/service.mjs start",
+    "test": "node --test --test-concurrency=2 tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "bake:room": "node scripts/bake-room.mjs",
+    "stop": "node scripts/service.mjs stop",
+    "restart": "node scripts/service.mjs restart",
+    "status": "node scripts/service.mjs status",
+    "build:static": "node scripts/build-static.mjs",
+    "deploy:static": "npm run build:static && npx wrangler@4.151.0 deploy --config wrangler.coop.jsonc",
+    "preview": "node scripts/preview-static.mjs",
+    "voices:build": "node scripts/generate-companion-voices.mjs"
+  },
+  "dependencies": {
+    "ethers": "6.17.0",
+    "three": "0.186.0"
+  },
+  "engines": {
+    "node": ">=22.16"
+  },
+  "productVersion": "8.5.0"
+}

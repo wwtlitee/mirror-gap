@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#030303">
+  <meta name="description" content="驾驶 TapeOut 机械果蝇，与真实神经回路驱动的同伴，共同生活在镜隙。">
+  <title>镜隙 · 共同的家</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='black'/%3E%3Cpath d='M8 7h5v18H8zm11 0h5v18h-5z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./coop.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+  <script type="module" src="./coop-app.mjs"></script>
+</head>
+<body>
+  <main id="game" aria-label="镜隙合作游戏">
+    <canvas id="room" aria-label="真实房间：玩家机械果蝇与自主神经果蝇"></canvas>
+    <div class="film-shade" aria-hidden="true"></div>
+    <div id="world-labels" aria-hidden="true"></div>
+    <header class="topline">
+      <a class="wordmark" href="./coop.html" aria-label="镜隙合作之家">镜隙<span>MIRROR GAP</span></a>
+      <nav aria-label="游戏工具">
+        <button id="view-toggle" type="button">俯瞰</button>
+        <button id="actor-toggle" type="button">看同伴</button>
+        <button id="pause" type="button" aria-label="暂停游戏，快捷键 P">暂停</button>
+        <button id="menu" type="button" aria-label="打开操作说明与存档">⋯</button>
+      </nav>
+    </header>
+    <section id="mission" class="mission" aria-labelledby="stage-title" hidden>
+      <p id="chapter-title" class="eyebrow">共同的家</p>
+      <h1 id="stage-title">带一份见面礼</h1>
+      <p id="instruction">取下补给，将它送到餐盘。</p>
+      <p id="pairing-progress" class="muted" hidden></p>
+      <p id="trial-progress" class="muted" hidden></p>
+      <div id="probe-progress" class="probe-progress" hidden><span id="probe-clock">观察 0 / 20 秒</span><progress id="probe-meter" max="20" value="0"></progress><button id="start-probe" type="button">撤食观察</button><button id="end-probe" type="button">提前结束</button><button id="swap-probe" type="button" hidden>交换位置再观察</button></div>
+    </section>
+    <aside id="player-state" class="player-state" aria-label="机械果蝇状态" hidden>
+      <div class="readout-heading"><span>TAPEOUT / 机械蝇</span><strong id="energy">100%</strong></div>
+      <progress id="energy-meter" max="100" value="100" aria-label="机械能量"></progress>
+      <p id="cargo">货槽空闲</p>
+      <p id="recovery" class="muted" hidden></p>
+    </aside>
+    <aside id="companion" class="companion" hidden><span class="life-dot"></span><div><strong>生命同伴 · 自主行动</strong><span id="companion-state">它正在自己探索。</span></div></aside>
+    <p id="notice" class="notice" role="status" aria-live="polite" hidden></p>
+    <button id="interact" class="interact" type="button" hidden><kbd>E</kbd><span id="interact-label">交互</span></button>
+    <div id="signals" class="signals" aria-label="气味信号" hidden>
+      <button type="button" data-signal="A" aria-label="选择气味 A，快捷键 1">A<small>1</small></button>
+      <button type="button" data-signal="B" aria-label="选择气味 B，快捷键 2">B<small>2</small></button>
+      <button type="button" data-signal="off" aria-label="关闭信号，快捷键 0">○<small>0</small></button>
+      <span id="actual-signal">实际输出 · 关闭</span>
+    </div>
+    <p id="keyboard-guide" class="keyboard-guide" hidden><kbd>WASD</kbd> 移动 <kbd>空格</kbd> 升 <kbd>Shift</kbd> 降 <kbd>E</kbd> 交互</p>
+    <div id="touch-controls" class="touch-controls" hidden>
+      <div id="joystick" class="joystick" role="group" aria-label="触屏移动摇杆"><span id="joystick-thumb"></span><span class="joystick-label">移动</span></div>
+      <div class="touch-actions"><button id="touch-up" type="button" aria-label="持续上升">↑</button><button id="touch-interact" type="button">交互</button><button id="touch-down" type="button" aria-label="持续下降">↓</button></div>
+    </div>
+    <section id="arrival" class="arrival overlay" aria-labelledby="arrival-title">
+      <div class="arrival-copy"><p class="eyebrow">A HOME FOR TWO DIFFERENT MINDS</p><h2 id="arrival-title">你负责创造机会。<br>它决定如何回应。</h2><p class="intro">驾驶 TapeOut 机械果蝇，运一份补给，接通一盏信号。和真实神经回路驱动的同伴，一起把这里过成家。</p><button id="start" class="primary" type="button" disabled>正在准备房间</button><p id="loading-status" class="loading-status" role="status">机械与生命，正在连接同一个世界。</p><p class="arrival-meta">六章共同生活 / 键鼠与触屏 / v8.5.0</p></div>
+    </section>
+    <section id="milestone" class="milestone overlay" aria-labelledby="milestone-title" hidden><div class="milestone-copy"><p id="milestone-kicker" class="eyebrow">共同生活 · 下一步</p><h2 id="milestone-title">一起，又向前一点。</h2><p id="milestone-detail"></p><p id="ending-evidence" class="muted" hidden></p><div class="button-row"><button id="continue" class="primary" type="button">继续</button><button id="free-life" type="button" hidden>回到共同的家</button><button id="retry-stage" type="button">重试这一段</button><button id="end-trial" type="button" hidden>回到共同的家</button></div></div></section>
+    <dialog id="menu-dialog"><form method="dialog"><div class="dialog-heading"><p class="eyebrow">共同生活 / 操作与存档</p><button class="close" aria-label="关闭菜单" value="close">×</button></div><h2>慢一点，也可以。</h2><p>WASD 水平移动；空格上升；Shift 下降；E 交互；1 / 2 选择 A / B，0 关闭信号；P 暂停；F 全屏。</p><p>手机使用左侧摇杆与右侧升降、交互按钮。点击“俯瞰”寻找补给和目标，再回到跟随视角。</p><p class="muted">机械信号由 TapeOut 电路输出约束。按钮不移动生命同伴；真实摄食才产生教学。突触变化不等于已经稳定追随。</p><div class="button-row"><button id="export-save" type="button">导出同住存档</button><button id="import-save" type="button">导入存档</button></div><label class="file-label" hidden><input id="save-file" type="file" accept="application/json,.json"></label><button id="new-game" type="button" class="text-danger">建立新的共同之家</button><p class="version-line">镜隙 v8.5.0 · 独立合作存档</p></form></dialog>
+    <dialog id="new-game-dialog"><h2>开始新的共同生活？</h2><p>当前合作进度将被替换。建议先导出存档；原日常之家与训练室不受影响。</p><div class="button-row"><button id="cancel-new-game" type="button">返回</button><button id="confirm-new-game" type="button" class="primary">建立新家</button></div></dialog>
+    <div id="failure" class="failure" role="alert" hidden><p id="error-message"></p><button id="retry-connection" type="button">重新连接</button></div>
+  </main>
+</body>
+</html>

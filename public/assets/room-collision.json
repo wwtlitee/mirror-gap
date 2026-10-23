@@ -1,0 +1,1376 @@
+{
+  "format": "float32-v1",
+  "version": "8.1.2",
+  "scale": 1,
+  "precision": 0.000001,
+  "triangles": 440279,
+  "sources": {
+    "food-model-detail.mjs": "9018fe6c2e9f3139f73d5fa7f470e3b40bf6a6b155c7c1c46f89d31cf154165d",
+    "interior-refinement.mjs": "de460c4f7a990dde48fcf2cf989b53ffd031027673a1fcc2380795552f70ce1c",
+    "toilet-model-detail.mjs": "75d02dff0be4187ced3c40eb870f5568f6bcb97c0e5e508cff7e8e9debad42f2",
+    "city-natural-detail.mjs": "524336219f8d145590f7de6f10a44ed457731456ce13c62ed809a6d9d1b7e460",
+    "home-render-finish.mjs": "69b70107b0db50e24352599efc6e46425b1ef4f607d894f80f7f5c2433dbb418",
+    "render-quality.mjs": "f4fe13fab5c3c2523acab68163a78b021c927e9b47ec9ab86587dc327c3cc8d2",
+    "mesh-batching.mjs": "fc4978fd0a8706e535ce074d839657013c117454e98dca4f8edf9458135ad719",
+    "natural-materials.mjs": "ecb3d3748c71b4420e960cacd468552f60ffc32257d910cddc057b37e4865bb8",
+    "room-model-detail.mjs": "3f6a5b6dbe8fd2229afccabf5855a8cf193e725d8b8854f0a2eb94bd38643987",
+    "habitat-model-detail.mjs": "9a994bbc0e639702eae6de1ad1a0ea54f0f04068a8767dabb6544c309cc994d3",
+    "camera-clipping.mjs": "69efea7086d0045e46f3f3fa6ee5d11bb23af2fd1de49fe60f35b8247eabec57",
+    "software-batching.mjs": "9a9f0d5d2934e696f31ad9258ca24d3031ec6c2d55a58b76a61933867d168a3d",
+    "city-model-detail.mjs": "5422ca50fac121cb9fc0fc6db427cfad0b5ca0a9064f20bb56dc52b9ba734378",
+    "food-portions.mjs": "85bc83918790ecce3980c607f4de27dd867cf89e1f9781b5a89f086d04f02e43",
+    "food-stock.mjs": "80c5255bfe5d0917a0f2c32bff996e134d981c669517f135fabe8c49e8b30fab",
+    "scene.mjs": "8b7c736ce0052981fcd0284873ea30797a203f875684f45621bee43c81590635",
+    "room-assets.mjs": "69ca5b4a52e0adc4c5c3fb1fd8aba5a06cac52e99e3d2cb87e17161f56b5a7c8",
+    "open-habitat.mjs": "d640ffc8f1369583c95d8e8f1cd2b8a247cf4fd071a078d1b2ced4789cde3754",
+    "habitat-renovation.mjs": "08f5a0e5f1ade9e4c4c7bf3a3bdcfd785dfd0122a72407a43b62ec1b47184b98",
+    "habitat-layout.mjs": "1b5ec8e398d52cd01a0c979ca5c2438b7d277fa42529aa167c8e8fdcfd03f772",
+    "habitat-ground.mjs": "8ae8c4dbb57c09c36aee4041a512efe563c7817549ac5040405f906b1d0d0159",
+    "interior-details.mjs": "d48ae5a4fb5c67689313ee87c68d93fac23a8163c5704f46ef7c5090435eb08c",
+    "collision-export.mjs": "54226c78df85b98f3aa558be6d22234514f387120ff8c435f7dda6967842c9cd",
+    "resource-spec.mjs": "b46e53eba4976078b42229b71f2426851bafb18bef4965d6bc8895be4342f40e",
+    "water-surfaces.mjs": "ff4525c5a9e219aa8e0304419842260a706fc860646a70577e3bdd7423dea7b4",
+    "outside-world.mjs": "158be88ee25d9ef8612b2dc81d2490a6e170b9ed3eb131e62dd4244d76871b30",
+    "night-city.mjs": "537772fd9a715ef5dbf4e8c67f9a5038c72532e2a178f598075b22b80d6b81ae",
+    "night-city-materials.mjs": "1241da95be4ff6bcebce12740591acdf233cada147439cc9c06d2fc2927ffbd5",
+    "city-billboards.mjs": "661c5d9f855de9f236b872423ee1917af2ec0d5623103a279401d8fce948b719",
+    "billboard-cycle.mjs": "0e31b681b898010038e69f7667e7bd2d5162b75ad7ea7bad9d82d4c47040e80a",
+    "city-interiors.mjs": "a1cb4931b0792ed71db701e326c35f2b7a9a5091b2f6db155cdfa8950c669c9e",
+    "city-shops.mjs": "3402a80d8856eb3254cae552b4d4833f6b9b7978099ff092dc4484389245a0b7",
+    "city-road-life.mjs": "80e717952f401b5aa33ec7af4a5eacb5eca548d46700e809a534485b97474d4b",
+    "city-traffic-paths.mjs": "d6271a77463ab6ae1176fbbe20bb530c3f9543771e271fcdc882c963842839ca",
+    "assets/night-city.json": "5109bb4874c37a288e5cd1ce933dc9267e6e0a2eee1115ca4131f47350df13db",
+    "toilet-contact.mjs": "b3f9fc90c805388be98a8e7284ebe531af6f35120481c53220d59d3d1b724c4f",
+    "assets/resource-surfaces.json": "0fd1320dae28f444d3ecd01b07130a7cbfc725975776bd1ff2f02be4e1e3b97f",
+    "assets/kenney-nature/grass_large.glb": "af49a595624abca7249824eeefb944d4baf974abeeb5b16110d175da3563d6cd",
+    "assets/kenney-nature/grass_leafsLarge.glb": "a68b9b3d9639afaeb4ace840d5a8e3f21ffc4e8afc1eab15566500fbb2bee3e3",
+    "assets/kenney-nature/lily_large.glb": "c8f7080df0ae3166e9d33f523b66360c2ac7556dff36cc9c8ee78b6a676c7db2",
+    "assets/kenney-nature/log.glb": "8c8fe8f6adfc03a3c0cd6cb24961ff74be96c2da284d70322f05797d049972d6",
+    "assets/kenney-nature/mushroom_tanGroup.glb": "2dc979485f164d7dce34329096271f44e0c9ea329c104251d94bcfbc8f8fe05e",
+    "assets/kenney-nature/plant_bushDetailed.glb": "2e0487020d68ccf664435db9d829c78ae00e6d2785ee3ec10b9f89cc70a10406",
+    "assets/kenney-nature/rock_largeA.glb": "6dd15390fd96501dcd1454765a17ba61dbbd8d47705dfe5149c8dd92b353ce25",
+    "assets/kenney-nature/rock_largeC.glb": "23aee8b727adeaf260207af3e0615dc69aa766c6d87de1d44cbc8c2711d74dd1",
+    "assets/kenney-nature/rock_smallE.glb": "e6e03586ca03316bab707ced869f5d4fa50dccc67dd056e94b667fc1e929c05c",
+    "assets/kenney-nature/rock_smallFlatA.glb": "40ceafacfaabb0f04f93688fd8696c1464c65512bef219e1459c1f238cbbbe21",
+    "assets/kenney-nature/tree_detailed.glb": "c041daf2f0fb1d49e4325227cbcd58667adbe51e9b55e8c1f0a94b74cc521b3b",
+    "assets/kenney-nature/tree_oak.glb": "d7fd8773674928c50c11b66d12c636d49bdcc15a8b1c7fbb98e6f63a3439a3f3",
+    "assets/kenney-nature/tree_palmDetailedShort.glb": "bc1013aaacca3bdd116ad1cded4f9499f008fe3056e760f3238be05aa21ff9f2",
+    "assets/kenney-home/apple.glb": "2a80ab65d5bc2cb4f2bca1e8176cbb591849a288596d4b2e76e411338761a526",
+    "assets/kenney-home/banana.glb": "67c90aa8bef35b8886d6b67c0c4c3249556e28176c893d451b95cd83a156908c",
+    "assets/kenney-home/burger-cheese.glb": "1797e8031017d9d8ebdad93103f59e8ad56482b58665dcb2c6376172f997ef5b",
+    "assets/kenney-home/fries.glb": "fa172a6333404a473db7b98a6c9a2b74adab1e1181d92bcd39625b89df55d377",
+    "assets/kenney-home/loungeChairRelax.glb": "def698179e44de6cd17f4cfc2730273da54dd25458a29b079fbf4468abe5d98e",
+    "assets/kenney-home/pizza.glb": "e98eda0a63421bc4e86f063ebd096a21e50254b169ddbba945d2473b59390951",
+    "assets/kenney-home/sandwich.glb": "eba221f9fc24bdaad73467e58ce9c09ec4134baeec01f178e7bb3e87ce3b941e",
+    "assets/kenney-home/toiletSquare.glb": "f241e26a22b0d9512d8455f3e868124f8032710c83c5265a546c19c67ecdd4b9",
+    "resource-data.mjs": "8d2f92b35a632e1524b0ba734a97f3acec203c8c1407264836ea1aa15678e242",
+    "resource-contact.mjs": "8c37c0847846bf8ec307e904a3be3e9f2af2c1a54df60a64bd3db09683e6fe05",
+    "collision-world.mjs": "87af39b0ba56f15497b7835495a915c116bef2b2095998f6713035feba8ede7e",
+    "assets/resource-surfaces/apple.json": "9a03766c9efdb701f7167c016eeb5455021f19361005af23de381b4de5c0d097",
+    "assets/resource-surfaces/banana.json": "3943c75ed42df8b4929c8081f28ab65557e4a2404d66167962c55215ac340c12",
+    "assets/resource-surfaces/burger.json": "09b2aec5de84e1ecb82250529cc21ec64652f363b12ee3b74cf47cf42752e44f",
+    "assets/resource-surfaces/fig.json": "00c0a5ad57246211334e1ba090d3278b73c59b338d5289d21dbd6fc3a0eff960",
+    "assets/resource-surfaces/fries.json": "570fb8d04d74b643b3627b76da71d438b9f95a760c427e00b5ae018de67e4252",
+    "assets/resource-surfaces/pizza.json": "2b00313a561ebaf368fe1360851b85bf8c5d5a0cea31f83c577e27c6992fc4ca",
+    "assets/resource-surfaces/sandwich.json": "1a5410d31a12117bf12dd86a9b7a06c90772cd7cccf68215eab2dd0c38674500",
+    "assets/resource-surfaces/shallow-pool.json": "dcd16907e6bbb88d930ed4f4628eab91625a84af389dbd928dbadef1d0f8a4b9",
+    "assets/resource-surfaces/water-bowl.json": "f2164980b47f3a121850b740d43f6cf60e88e41686b79525591a357bf6ac737e"
+  },
+  "objects": [
+    {
+      "name": "Individual_walnut_floorboards",
+      "zone": "flight",
+      "triangles": 11664
+    },
+    {
+      "name": "Beveled_masonry_blocks",
+      "zone": "flight",
+      "triangles": 5832
+    },
+    {
+      "name": "Bed_turned_wooden_plinth",
+      "zone": "rest",
+      "triangles": 576
+    },
+    {
+      "name": "ExtrudeGeometry",
+      "zone": "rest",
+      "triangles": 1068
+    },
+    {
+      "name": "Padded_arch_headboard",
+      "zone": "rest",
+      "triangles": 3960
+    },
+    {
+      "name": "TubeGeometry",
+      "zone": "rest",
+      "triangles": 432
+    },
+    {
+      "name": "Lamp_hollow_glass_globe",
+      "zone": "rest",
+      "triangles": 1792
+    },
+    {
+      "name": "Lamp_hollow_glass_globe",
+      "zone": "rest",
+      "triangles": 1792
+    },
+    {
+      "name": "rest_material_batch",
+      "zone": "rest",
+      "triangles": 2720
+    },
+    {
+      "name": "rest_material_batch",
+      "zone": "rest",
+      "triangles": 5848
+    },
+    {
+      "name": "rest_material_batch",
+      "zone": "rest",
+      "triangles": 5856
+    },
+    {
+      "name": "rest_material_batch",
+      "zone": "rest",
+      "triangles": 3052
+    },
+    {
+      "name": "rest_material_batch",
+      "zone": "rest",
+      "triangles": 2616
+    },
+    {
+      "name": "rest_material_batch",
+      "zone": "rest",
+      "triangles": 1440
+    },
+    {
+      "name": "PlaneGeometry",
+      "zone": "flight",
+      "triangles": 2
+    },
+    {
+      "name": "CircleGeometry",
+      "zone": "feed",
+      "triangles": 40
+    },
+    {
+      "name": "Bottle_hollow_glass_body",
+      "zone": "feed",
+      "triangles": 2304
+    },
+    {
+      "name": "Bottle_liquid_meniscus",
+      "zone": "feed",
+      "triangles": 384
+    },
+    {
+      "name": "Plant_pot_thick_rim",
+      "zone": "feed",
+      "triangles": 2784
+    },
+    {
+      "name": "Plant_pot_granular_soil",
+      "zone": "feed",
+      "triangles": 1344
+    },
+    {
+      "name": "fries-piece-0",
+      "zone": "feed",
+      "triangles": 312
+    },
+    {
+      "name": "fries-piece-1",
+      "zone": "feed",
+      "triangles": 312
+    },
+    {
+      "name": "fries-piece-2",
+      "zone": "feed",
+      "triangles": 312
+    },
+    {
+      "name": "fries-piece-7",
+      "zone": "feed",
+      "triangles": 289
+    },
+    {
+      "name": "fries-piece-0",
+      "zone": "feed",
+      "triangles": 289
+    },
+    {
+      "name": "fries-piece-1",
+      "zone": "feed",
+      "triangles": 292
+    },
+    {
+      "name": "fries-piece-2",
+      "zone": "feed",
+      "triangles": 290
+    },
+    {
+      "name": "fries-container",
+      "zone": "feed",
+      "triangles": 780
+    },
+    {
+      "name": "fries-piece-3",
+      "zone": "feed",
+      "triangles": 579
+    },
+    {
+      "name": "fries-piece-4",
+      "zone": "feed",
+      "triangles": 579
+    },
+    {
+      "name": "fries-piece-5",
+      "zone": "feed",
+      "triangles": 578
+    },
+    {
+      "name": "fries-piece-6",
+      "zone": "feed",
+      "triangles": 579
+    },
+    {
+      "name": "apple-container",
+      "zone": "feed",
+      "triangles": 160
+    },
+    {
+      "name": "apple-container",
+      "zone": "feed",
+      "triangles": 44
+    },
+    {
+      "name": "apple-piece-0",
+      "zone": "feed",
+      "triangles": 411
+    },
+    {
+      "name": "apple-piece-0",
+      "zone": "feed",
+      "triangles": 36
+    },
+    {
+      "name": "apple-piece-0",
+      "zone": "feed",
+      "triangles": 41
+    },
+    {
+      "name": "apple-piece-1",
+      "zone": "feed",
+      "triangles": 479
+    },
+    {
+      "name": "apple-piece-1",
+      "zone": "feed",
+      "triangles": 53
+    },
+    {
+      "name": "apple-piece-1",
+      "zone": "feed",
+      "triangles": 61
+    },
+    {
+      "name": "apple-piece-2",
+      "zone": "feed",
+      "triangles": 482
+    },
+    {
+      "name": "apple-piece-2",
+      "zone": "feed",
+      "triangles": 55
+    },
+    {
+      "name": "apple-piece-2",
+      "zone": "feed",
+      "triangles": 57
+    },
+    {
+      "name": "apple-piece-3",
+      "zone": "feed",
+      "triangles": 441
+    },
+    {
+      "name": "apple-piece-3",
+      "zone": "feed",
+      "triangles": 54
+    },
+    {
+      "name": "apple-piece-3",
+      "zone": "feed",
+      "triangles": 35
+    },
+    {
+      "name": "apple-piece-4",
+      "zone": "feed",
+      "triangles": 441
+    },
+    {
+      "name": "apple-piece-4",
+      "zone": "feed",
+      "triangles": 35
+    },
+    {
+      "name": "apple-piece-4",
+      "zone": "feed",
+      "triangles": 56
+    },
+    {
+      "name": "apple-piece-5",
+      "zone": "feed",
+      "triangles": 481
+    },
+    {
+      "name": "apple-piece-5",
+      "zone": "feed",
+      "triangles": 81
+    },
+    {
+      "name": "apple-piece-5",
+      "zone": "feed",
+      "triangles": 69
+    },
+    {
+      "name": "apple-piece-6",
+      "zone": "feed",
+      "triangles": 480
+    },
+    {
+      "name": "apple-piece-6",
+      "zone": "feed",
+      "triangles": 67
+    },
+    {
+      "name": "apple-piece-6",
+      "zone": "feed",
+      "triangles": 59
+    },
+    {
+      "name": "apple-piece-7",
+      "zone": "feed",
+      "triangles": 408
+    },
+    {
+      "name": "apple-piece-7",
+      "zone": "feed",
+      "triangles": 46
+    },
+    {
+      "name": "apple-piece-7",
+      "zone": "feed",
+      "triangles": 31
+    },
+    {
+      "name": "banana-piece-7",
+      "zone": "feed",
+      "triangles": 220
+    },
+    {
+      "name": "banana-piece-7",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-5",
+      "zone": "feed",
+      "triangles": 200
+    },
+    {
+      "name": "banana-piece-5",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-5",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-3",
+      "zone": "feed",
+      "triangles": 200
+    },
+    {
+      "name": "banana-piece-3",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-3",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-1",
+      "zone": "feed",
+      "triangles": 200
+    },
+    {
+      "name": "banana-piece-1",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-1",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-0",
+      "zone": "feed",
+      "triangles": 200
+    },
+    {
+      "name": "banana-piece-0",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-0",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-2",
+      "zone": "feed",
+      "triangles": 200
+    },
+    {
+      "name": "banana-piece-2",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-2",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-4",
+      "zone": "feed",
+      "triangles": 200
+    },
+    {
+      "name": "banana-piece-4",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-4",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-piece-6",
+      "zone": "feed",
+      "triangles": 220
+    },
+    {
+      "name": "banana-piece-6",
+      "zone": "feed",
+      "triangles": 18
+    },
+    {
+      "name": "banana-container",
+      "zone": "feed",
+      "triangles": 216
+    },
+    {
+      "name": "burger-piece-0",
+      "zone": "feed",
+      "triangles": 1354
+    },
+    {
+      "name": "burger-piece-0",
+      "zone": "feed",
+      "triangles": 355
+    },
+    {
+      "name": "burger-piece-1",
+      "zone": "feed",
+      "triangles": 3360
+    },
+    {
+      "name": "burger-piece-1",
+      "zone": "feed",
+      "triangles": 354
+    },
+    {
+      "name": "burger-piece-1",
+      "zone": "feed",
+      "triangles": 490
+    },
+    {
+      "name": "burger-piece-2",
+      "zone": "feed",
+      "triangles": 4477
+    },
+    {
+      "name": "burger-piece-2",
+      "zone": "feed",
+      "triangles": 480
+    },
+    {
+      "name": "burger-piece-2",
+      "zone": "feed",
+      "triangles": 547
+    },
+    {
+      "name": "burger-piece-3",
+      "zone": "feed",
+      "triangles": 5111
+    },
+    {
+      "name": "burger-piece-3",
+      "zone": "feed",
+      "triangles": 532
+    },
+    {
+      "name": "burger-piece-3",
+      "zone": "feed",
+      "triangles": 234
+    },
+    {
+      "name": "burger-piece-4",
+      "zone": "feed",
+      "triangles": 4989
+    },
+    {
+      "name": "burger-piece-4",
+      "zone": "feed",
+      "triangles": 227
+    },
+    {
+      "name": "burger-piece-4",
+      "zone": "feed",
+      "triangles": 530
+    },
+    {
+      "name": "burger-piece-5",
+      "zone": "feed",
+      "triangles": 4500
+    },
+    {
+      "name": "burger-piece-5",
+      "zone": "feed",
+      "triangles": 527
+    },
+    {
+      "name": "burger-piece-5",
+      "zone": "feed",
+      "triangles": 589
+    },
+    {
+      "name": "burger-piece-6",
+      "zone": "feed",
+      "triangles": 3683
+    },
+    {
+      "name": "burger-piece-6",
+      "zone": "feed",
+      "triangles": 497
+    },
+    {
+      "name": "burger-piece-6",
+      "zone": "feed",
+      "triangles": 341
+    },
+    {
+      "name": "burger-piece-7",
+      "zone": "feed",
+      "triangles": 1188
+    },
+    {
+      "name": "burger-piece-7",
+      "zone": "feed",
+      "triangles": 320
+    },
+    {
+      "name": "pizza-piece-0",
+      "zone": "feed",
+      "triangles": 8584
+    },
+    {
+      "name": "pizza-piece-1",
+      "zone": "feed",
+      "triangles": 7944
+    },
+    {
+      "name": "pizza-piece-2",
+      "zone": "feed",
+      "triangles": 7944
+    },
+    {
+      "name": "pizza-piece-3",
+      "zone": "feed",
+      "triangles": 8584
+    },
+    {
+      "name": "pizza-piece-4",
+      "zone": "feed",
+      "triangles": 7944
+    },
+    {
+      "name": "pizza-piece-5",
+      "zone": "feed",
+      "triangles": 7944
+    },
+    {
+      "name": "pizza-piece-6",
+      "zone": "feed",
+      "triangles": 8584
+    },
+    {
+      "name": "pizza-piece-7",
+      "zone": "feed",
+      "triangles": 7944
+    },
+    {
+      "name": "sandwich-piece-7",
+      "zone": "feed",
+      "triangles": 806
+    },
+    {
+      "name": "sandwich-piece-7",
+      "zone": "feed",
+      "triangles": 138
+    },
+    {
+      "name": "sandwich-piece-5",
+      "zone": "feed",
+      "triangles": 1623
+    },
+    {
+      "name": "sandwich-piece-5",
+      "zone": "feed",
+      "triangles": 144
+    },
+    {
+      "name": "sandwich-piece-5",
+      "zone": "feed",
+      "triangles": 285
+    },
+    {
+      "name": "sandwich-piece-3",
+      "zone": "feed",
+      "triangles": 3889
+    },
+    {
+      "name": "sandwich-piece-3",
+      "zone": "feed",
+      "triangles": 282
+    },
+    {
+      "name": "sandwich-piece-3",
+      "zone": "feed",
+      "triangles": 365
+    },
+    {
+      "name": "sandwich-piece-1",
+      "zone": "feed",
+      "triangles": 3343
+    },
+    {
+      "name": "sandwich-piece-1",
+      "zone": "feed",
+      "triangles": 376
+    },
+    {
+      "name": "sandwich-piece-1",
+      "zone": "feed",
+      "triangles": 305
+    },
+    {
+      "name": "sandwich-piece-0",
+      "zone": "feed",
+      "triangles": 2524
+    },
+    {
+      "name": "sandwich-piece-0",
+      "zone": "feed",
+      "triangles": 307
+    },
+    {
+      "name": "sandwich-piece-0",
+      "zone": "feed",
+      "triangles": 234
+    },
+    {
+      "name": "sandwich-piece-2",
+      "zone": "feed",
+      "triangles": 1953
+    },
+    {
+      "name": "sandwich-piece-2",
+      "zone": "feed",
+      "triangles": 228
+    },
+    {
+      "name": "sandwich-piece-2",
+      "zone": "feed",
+      "triangles": 179
+    },
+    {
+      "name": "sandwich-piece-4",
+      "zone": "feed",
+      "triangles": 756
+    },
+    {
+      "name": "sandwich-piece-4",
+      "zone": "feed",
+      "triangles": 172
+    },
+    {
+      "name": "sandwich-piece-4",
+      "zone": "feed",
+      "triangles": 102
+    },
+    {
+      "name": "sandwich-piece-6",
+      "zone": "feed",
+      "triangles": 630
+    },
+    {
+      "name": "sandwich-piece-6",
+      "zone": "feed",
+      "triangles": 96
+    },
+    {
+      "name": "fig-piece-0",
+      "zone": "feed",
+      "triangles": 1107
+    },
+    {
+      "name": "fig-piece-0",
+      "zone": "feed",
+      "triangles": 168
+    },
+    {
+      "name": "fig-piece-0",
+      "zone": "feed",
+      "triangles": 131
+    },
+    {
+      "name": "fig-piece-0",
+      "zone": "feed",
+      "triangles": 1850
+    },
+    {
+      "name": "fig-piece-0",
+      "zone": "feed",
+      "triangles": 331
+    },
+    {
+      "name": "fig-piece-1",
+      "zone": "feed",
+      "triangles": 1207
+    },
+    {
+      "name": "fig-piece-1",
+      "zone": "feed",
+      "triangles": 144
+    },
+    {
+      "name": "fig-piece-1",
+      "zone": "feed",
+      "triangles": 96
+    },
+    {
+      "name": "fig-piece-1",
+      "zone": "feed",
+      "triangles": 1244
+    },
+    {
+      "name": "fig-piece-1",
+      "zone": "feed",
+      "triangles": 492
+    },
+    {
+      "name": "fig-piece-2",
+      "zone": "feed",
+      "triangles": 1353
+    },
+    {
+      "name": "fig-piece-2",
+      "zone": "feed",
+      "triangles": 115
+    },
+    {
+      "name": "fig-piece-2",
+      "zone": "feed",
+      "triangles": 119
+    },
+    {
+      "name": "fig-piece-2",
+      "zone": "feed",
+      "triangles": 1597
+    },
+    {
+      "name": "fig-piece-2",
+      "zone": "feed",
+      "triangles": 570
+    },
+    {
+      "name": "fig-piece-3",
+      "zone": "feed",
+      "triangles": 1275
+    },
+    {
+      "name": "fig-piece-3",
+      "zone": "feed",
+      "triangles": 137
+    },
+    {
+      "name": "fig-piece-3",
+      "zone": "feed",
+      "triangles": 200
+    },
+    {
+      "name": "fig-piece-3",
+      "zone": "feed",
+      "triangles": 1442
+    },
+    {
+      "name": "fig-piece-3",
+      "zone": "feed",
+      "triangles": 548
+    },
+    {
+      "name": "fig-piece-4",
+      "zone": "feed",
+      "triangles": 2036
+    },
+    {
+      "name": "fig-piece-4",
+      "zone": "feed",
+      "triangles": 204
+    },
+    {
+      "name": "fig-piece-4",
+      "zone": "feed",
+      "triangles": 194
+    },
+    {
+      "name": "fig-piece-4",
+      "zone": "feed",
+      "triangles": 2456
+    },
+    {
+      "name": "fig-piece-4",
+      "zone": "feed",
+      "triangles": 566
+    },
+    {
+      "name": "fig-piece-5",
+      "zone": "feed",
+      "triangles": 2658
+    },
+    {
+      "name": "fig-piece-5",
+      "zone": "feed",
+      "triangles": 173
+    },
+    {
+      "name": "fig-piece-5",
+      "zone": "feed",
+      "triangles": 162
+    },
+    {
+      "name": "fig-piece-5",
+      "zone": "feed",
+      "triangles": 3118
+    },
+    {
+      "name": "fig-piece-5",
+      "zone": "feed",
+      "triangles": 861
+    },
+    {
+      "name": "fig-piece-6",
+      "zone": "feed",
+      "triangles": 2548
+    },
+    {
+      "name": "fig-piece-6",
+      "zone": "feed",
+      "triangles": 153
+    },
+    {
+      "name": "fig-piece-6",
+      "zone": "feed",
+      "triangles": 204
+    },
+    {
+      "name": "fig-piece-6",
+      "zone": "feed",
+      "triangles": 3249
+    },
+    {
+      "name": "fig-piece-6",
+      "zone": "feed",
+      "triangles": 823
+    },
+    {
+      "name": "fig-piece-7",
+      "zone": "feed",
+      "triangles": 1802
+    },
+    {
+      "name": "fig-piece-7",
+      "zone": "feed",
+      "triangles": 222
+    },
+    {
+      "name": "fig-piece-7",
+      "zone": "feed",
+      "triangles": 148
+    },
+    {
+      "name": "fig-piece-7",
+      "zone": "feed",
+      "triangles": 1883
+    },
+    {
+      "name": "fig-piece-7",
+      "zone": "feed",
+      "triangles": 669
+    },
+    {
+      "name": "feed_material_batch",
+      "zone": "feed",
+      "triangles": 8300
+    },
+    {
+      "name": "feed_material_batch",
+      "zone": "feed",
+      "triangles": 780
+    },
+    {
+      "name": "feed_material_batch",
+      "zone": "feed",
+      "triangles": 2212
+    },
+    {
+      "name": "feed_material_batch",
+      "zone": "feed",
+      "triangles": 7968
+    },
+    {
+      "name": "feed_material_batch",
+      "zone": "feed",
+      "triangles": 2048
+    },
+    {
+      "name": "feed_material_batch",
+      "zone": "feed",
+      "triangles": 1440
+    },
+    {
+      "name": "PlaneGeometry",
+      "zone": "flight",
+      "triangles": 2
+    },
+    {
+      "name": "PlaneGeometry",
+      "zone": "work",
+      "triangles": 2
+    },
+    {
+      "name": "Tailored_chair_carpet",
+      "zone": "work",
+      "triangles": 4248
+    },
+    {
+      "name": "Tailored_chair_wood",
+      "zone": "work",
+      "triangles": 864
+    },
+    {
+      "name": "Tailored_chair_metal",
+      "zone": "work",
+      "triangles": 376
+    },
+    {
+      "name": "Lamp_hollow_glass_globe",
+      "zone": "work",
+      "triangles": 1792
+    },
+    {
+      "name": "Lamp_hollow_glass_globe",
+      "zone": "work",
+      "triangles": 1792
+    },
+    {
+      "name": "work_material_batch",
+      "zone": "work",
+      "triangles": 8948
+    },
+    {
+      "name": "work_material_batch",
+      "zone": "work",
+      "triangles": 2520
+    },
+    {
+      "name": "work_material_batch",
+      "zone": "work",
+      "triangles": 12884
+    },
+    {
+      "name": "work_material_batch",
+      "zone": "work",
+      "triangles": 5388
+    },
+    {
+      "name": "work_material_batch",
+      "zone": "work",
+      "triangles": 1440
+    },
+    {
+      "name": "work_material_batch",
+      "zone": "work",
+      "triangles": 6676
+    },
+    {
+      "name": "work_material_batch",
+      "zone": "work",
+      "triangles": 792
+    },
+    {
+      "name": "PlaneGeometry",
+      "zone": "flight",
+      "triangles": 2
+    },
+    {
+      "name": "Joinery_beveled_existing_part",
+      "zone": "garden",
+      "triangles": 108
+    },
+    {
+      "name": "garden_material_batch",
+      "zone": "garden",
+      "triangles": 216
+    },
+    {
+      "name": "garden_material_batch",
+      "zone": "garden",
+      "triangles": 1296
+    },
+    {
+      "name": "Woven_rug_with_thickness",
+      "zone": "flight",
+      "triangles": 384
+    },
+    {
+      "name": "Rug_flattened_bound_edge",
+      "zone": "flight",
+      "triangles": 900
+    },
+    {
+      "name": "Plant_pot_thick_rim",
+      "zone": "flight",
+      "triangles": 2784
+    },
+    {
+      "name": "Plant_pot_granular_soil",
+      "zone": "flight",
+      "triangles": 1344
+    },
+    {
+      "name": "flight_material_batch",
+      "zone": "flight",
+      "triangles": 2304
+    },
+    {
+      "name": "flight_material_batch",
+      "zone": "flight",
+      "triangles": 5184
+    },
+    {
+      "name": "Habitat_moist_granular_bank",
+      "zone": "entry",
+      "triangles": 12
+    },
+    {
+      "name": "Habitat_tray_crossgrain_endboard",
+      "zone": "entry",
+      "triangles": 12
+    },
+    {
+      "name": "entry_material_batch",
+      "zone": "entry",
+      "triangles": 1404
+    },
+    {
+      "name": "entry_material_batch",
+      "zone": "entry",
+      "triangles": 10140
+    },
+    {
+      "name": "entry_material_batch",
+      "zone": "entry",
+      "triangles": 1728
+    },
+    {
+      "name": "entry_material_batch",
+      "zone": "entry",
+      "triangles": 5616
+    },
+    {
+      "name": "entry_material_batch",
+      "zone": "entry",
+      "triangles": 4560
+    },
+    {
+      "name": "entry_material_batch",
+      "zone": "entry",
+      "triangles": 7361
+    },
+    {
+      "name": "entry_material_batch",
+      "zone": "entry",
+      "triangles": 4063
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 1880
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 1512
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 7280
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 2016
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 3360
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 2016
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 2016
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 2016
+    },
+    {
+      "name": "nook_material_batch",
+      "zone": "nook",
+      "triangles": 480
+    },
+    {
+      "name": "Habitat_walnut_landscape_tray",
+      "zone": "perch",
+      "triangles": 12
+    },
+    {
+      "name": "Habitat_dry_granular_soil",
+      "zone": "perch",
+      "triangles": 8662
+    },
+    {
+      "name": "Mesh_rock_largeA",
+      "zone": "perch",
+      "triangles": 639
+    },
+    {
+      "name": "Mesh_rock_largeA_1",
+      "zone": "perch",
+      "triangles": 81
+    },
+    {
+      "name": "Mesh_rock_largeC",
+      "zone": "perch",
+      "triangles": 433
+    },
+    {
+      "name": "Mesh_rock_largeC_1",
+      "zone": "perch",
+      "triangles": 239
+    },
+    {
+      "name": "Mesh_rock_smallE",
+      "zone": "perch",
+      "triangles": 433
+    },
+    {
+      "name": "Mesh_rock_smallE_1",
+      "zone": "perch",
+      "triangles": 239
+    },
+    {
+      "name": "tree_palmDetailedShort",
+      "zone": "perch",
+      "triangles": 1568
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 36
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 866
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 478
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 5184
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 806
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 288
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 4320
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 14040
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 1404
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 10140
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 1488
+    },
+    {
+      "name": "perch_material_batch",
+      "zone": "perch",
+      "triangles": 288
+    },
+    {
+      "name": "toilet_material_batch",
+      "zone": "toilet",
+      "triangles": 1680
+    },
+    {
+      "name": "toilet_material_batch",
+      "zone": "toilet",
+      "triangles": 616
+    },
+    {
+      "name": "toilet_material_batch",
+      "zone": "toilet",
+      "triangles": 784
+    },
+    {
+      "name": "toilet_material_batch",
+      "zone": "toilet",
+      "triangles": 240
+    },
+    {
+      "name": "Botanical_leaf_canopy",
+      "zone": "flight",
+      "triangles": 11180
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 632
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 756
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 1048
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 648
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 216
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 1372
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 592
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 308
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 592
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 296
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 296
+    },
+    {
+      "name": "architecture_material_batch",
+      "zone": "flight",
+      "triangles": 296
+    }
+  ]
+}
