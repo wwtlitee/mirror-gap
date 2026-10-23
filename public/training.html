@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#252527">
+  <meta name="description" content="亲手发出气味，让数字果蝇在实际进食后，试着记住新的线索。">
+  <title>镜隙 · 气味训练室</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/training.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <header class="lab-header"><a href="/" class="back">← 果蝇之家</a><span class="lab-brand">镜隙 <span>/ 气味训练室</span></span><span class="version">v8.5.0</span></header>
+  <main class="lab-layout">
+    <section class="room-panel" aria-label="训练房间">
+      <canvas id="home-canvas" aria-label="数字果蝇的三维房间，拖动环顾，滚轮缩放"></canvas>
+      <div class="room-status"><span id="phase-badge">准备中</span><span id="room-message">正在建立独立实验个体</span></div>
+      <div class="room-tools" role="group" aria-label="观察视角"><button data-view="follow" aria-pressed="true">跟随果蝇</button><button data-view="feed" aria-pressed="false">看餐台</button><button data-view="overview" aria-pressed="false">全景</button></div>
+      <div class="loading" id="loading"><span class="spinner" aria-hidden="true"></span><p>正在布置训练室</p></div>
+      <p class="room-caption">拖动环顾 · 滚轮缩放 <span>蓝色 A / 黄色 B 为气味源</span></p>
+    </section>
+    <aside class="control-panel" aria-label="气味训练操作">
+      <div class="panel-intro"><span class="eyebrow">一次新的相遇</span><h1>给气味一点意义。</h1><p>发出一种气味，等它自己吃到食物。<br>然后撤食，看看它会朝哪边走。</p></div>
+      <section class="step" aria-labelledby="emit-title">
+        <div class="step-heading"><span class="step-number">01</span><h2 id="emit-title">一边进食，一边闻气味</h2></div>
+        <div class="cue-buttons" role="group" aria-label="餐台气味"><button id="emit-a" class="cue cue-a" disabled aria-pressed="false"><span>A</span>发出气味 A<kbd>1</kbd></button><button id="emit-b" class="cue cue-b" disabled aria-pressed="false"><span>B</span>发出气味 B<kbd>2</kbd></button></div>
+        <div class="signal-row"><p id="signal-state">准备连接…</p><button id="emit-off" class="text-button" disabled>关闭气味</button></div>
+        <div class="feeding-card"><span id="feeding-label">等待实际进食</span><output id="feeding-time">0.00 <small>秒</small></output><p id="training-evidence">气味在餐台释放。食物仍由它自己寻找。</p></div>
+      </section>
+      <section class="step" aria-labelledby="probe-title">
+        <div class="step-heading"><span class="step-number">02</span><h2 id="probe-title">撤食，观察它的选择</h2></div>
+        <p class="step-description" id="probe-hint">发出气味并实际进食后，就可以开始。</p>
+        <button id="start-probe" class="primary" disabled>撤掉食物 · 观察 20 秒 <span>→</span></button>
+        <div id="probe-progress" hidden><div class="progress-heading"><span>只有气味，没有食物</span><output id="probe-clock">0.0 / 20 秒</output></div><progress id="probe-meter" max="20" value="0" aria-label="撤食观察进度"></progress><button id="end-probe" class="secondary" disabled>提前结束，恢复食物</button></div>
+        <div id="result" class="result" hidden aria-live="polite"><span class="eyebrow">本次观察</span><h3 id="result-title"></h3><p id="result-detail"></p><p class="result-note">食物已恢复，身体与突触记忆继续保留。这是当次轨迹记录，换位复测会沿用当前位置。</p></div>
+        <button id="swap-probe" class="secondary" hidden disabled>交换 A / B 的位置，再观察</button>
+      </section>
+      <div class="session-tools"><button id="pause" class="secondary" disabled>暂停</button><button id="new-experiment" class="text-button" disabled>新建实验个体 ↗</button></div>
+      <div id="error" class="error" role="alert" hidden><p id="error-text"></p><button id="retry" class="secondary" hidden>重新建立实验个体</button></div>
+      <p id="action-message" class="action-message" role="status" aria-live="polite"></p>
+      <details class="lab-notes"><summary>这里发生了什么？</summary><p>原来的神经网络继续控制身体，原有觅食能力保留。A/B 是新增的中性气味，实际消耗食物才产生教学信号，关联保存在学习回路内部的突触变化中。</p><p>实验从餐台旁的饥饿状态开始，之后由它自己行动。撤食观察时关闭教学并冻结突触，让它在已有记忆下行动。一次靠近并不能单独证明学习；正式对照实验与玩家的这次观察分开记录。</p><p>本页使用独立实验个体，不读写日常果蝇存档。离开或刷新会结束本次实验；切到后台自动暂停。</p><p class="technical" id="technical-state"></p></details>
+    </aside>
+  </main>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><form method="dialog"><span class="eyebrow">重新开始</span><h2 id="reset-title">和另一只果蝇见面？</h2><p>当前训练记录和这只实验果蝇的突触记忆将被清空。日常果蝇之家里的个体和存档不受影响。</p><div class="dialog-actions"><button value="cancel" id="reset-cancel" class="secondary">继续这次实验</button><button value="confirm" id="reset-confirm" class="primary">新建实验个体</button></div></form></dialog>
+  <script type="module" src="/training-app.mjs"></script>
+</body>
+</html>

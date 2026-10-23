@@ -1,0 +1,30 @@
+{
+  "provenance": "Actual seed8501 resume8-03 failed body geometry and remaining stock; no neural state or weights.",
+  "actor": {
+    "position": [
+      -4.159531564978079,
+      1.302531942383139,
+      0.2238026489119855
+    ],
+    "heading": 0.7399727679927643,
+    "bodyScale": 0.019320724018710596,
+    "contact": false,
+    "velocity": [
+      0.10892566498733483,
+      -0.19346154989728337,
+      0.11148834655385814
+    ],
+    "zoneId": "nook",
+    "action": "explore"
+  },
+  "foods": {
+    "apple": 0,
+    "banana": 0,
+    "burger": 1.7647999816543916,
+    "pizza": 0,
+    "fries": 0,
+    "sandwich": 0,
+    "fig": 8
+  },
+  "homeFood": 1.3949714259506274
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#252527"><meta name="description" content="领养自己的果蝇，在自然的三维空间里观察它的生活、成长与习惯。">
+  <title>果蝇之家 · Drosophila Home</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect rx='22' width='80' height='80' fill='%23151c1d'/%3E%3Cpath d='M10 40Q40 5 70 40Q40 75 10 40Z' stroke='%2379d5d6' fill='none' stroke-width='3'/%3E%3Ccircle cx='40' cy='40' r='9' fill='%23eeb76a'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/habitat-ui.css"><link rel="stylesheet" href="/companion.css"><link rel="stylesheet" href="/ui-organization.css"><link rel="stylesheet" href="/natural-ui.css">
+  <script type="importmap">{"imports":{"three":"/vendor/three/build/three.module.js","three/addons/":"/vendor/three/examples/jsm/"}}</script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="/" aria-label="果蝇之家首页"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 15C9-4 1 17 22 26M24 15C39-4 47 17 26 26M24 14V40M18 31L9 39M30 31L39 39M18 24L8 24M30 24L40 24"/><circle cx="24" cy="11" r="3"/></svg><span>果蝇之家<small>生活观察室</small></span></a><div class="language-switch" role="group" aria-label="Language / 语言" data-no-locale><button type="button" data-language="zh" aria-pressed="true" lang="zh-CN">中</button><span aria-hidden="true">/</span><button type="button" data-language="en" aria-pressed="false" lang="en">EN</button></div>
+    <div class="house-meta"><span class="connection" id="connection"><i></i>正在连接</span><span class="separator"></span><span id="house-clock">第 1 天 · 09:00</span></div>
+
+    <a class="training-entry" href="/coop.html">一起生活 ↗</a>
+    <a class="training-entry" href="/training.html">气味训练室 ↗</a>
+    <button id="settings-toggle" aria-haspopup="dialog" aria-controls="settings-dialog">设置</button>
+    <button class="icon-button" id="about-button" aria-label="了解这个家">?</button>
+  </header>
+  <main class="home-layout">
+    <section class="room-panel" aria-label="三维生活空间">
+      <canvas id="home-canvas" aria-label="镜隙的三维房间，可拖动旋转、滚轮缩放"></canvas>
+      <div id="loading" class="loading"><span class="loading-ring"></span><p>正在载入生活空间</p></div>
+      <div id="room-transition" class="room-transition" hidden><span class="loading-ring"></span><p>正在进入房间</p></div>
+      <div id="scene-error" class="scene-error" hidden><strong>暂时无法显示三维空间</strong><p id="scene-error-text"></p><button onclick="location.reload()">重新打开</button></div>
+      <div class="scene-toolbar"><div class="view-switch" role="group" aria-label="观察视角"><button data-view="overview" aria-pressed="false">全景</button><button data-view="follow" class="active" aria-pressed="true">第三人称</button><button data-view="first" aria-pressed="false">第一人称</button></div><button id="fullscreen-button" class="icon-button" aria-label="切换全屏">⛶</button></div>
+      <div class="update-notice" id="update-notice" hidden><span>新版已就绪</span><button id="reload-home">刷新查看</button></div>
+      <div class="hud-status"><section class="needs-section"><div class="section-heading"><h3>日常照顾</h3><span id="care-summary" data-no-locale>第 — 天 · 体型 —</span></div><div id="needs"><div id="care-needs" class="needs"></div><details id="body-details"><summary>身体详情 <span>另外 5 项</span></summary><p class="section-description">这些状态由它的活动和环境共同影响。</p><div id="body-needs" class="needs"></div></details></div></section></div>
+      <div class="hud-brain"><section class="brain-section" aria-labelledby="brain-title">
+        
+        <div class="section-heading brain-heading"><h2 id="brain-title">神经活动</h2><span id="neural-status" role="status">正在连接</span></div>
+        <div class="brain-viewport"><canvas id="brain-canvas" aria-label="镜隙果蝇子网络的实际放电，脑形为示意布局"></canvas><span class="brain-caption">连接子网络 · 活动示意</span></div>
+        <div class="neural-metrics"><span><output id="neuron-count">—</output><small>神经元</small></span><span><output id="spike-count">—</output><small>本帧放电</small></span></div>
+
+      </section></div>
+      <section class="resident behavior-dock" aria-label="当前行为与感受"><div class="behavior-heading"><span class="presence-dot"></span><span class="resident-name">镜隙</span><h2 id="activity-title">正在醒来</h2></div><p id="activity-reason" class="activity-reason">正在读取生活记录。</p><div class="sense-line"><span class="dock-label">感受</span><p id="sense-summary">等待环境信号</p></div><div class="sense-line"><span class="dock-label">反应</span><p id="motion-explanation" role="status">正在读取运动状态</p></div><span id="live-action" hidden></span></section>
+      <div class="zone-caption" id="zone-caption" hidden><span></span><p></p></div>
+      <span class="orbit-hint">拖动环顾 · 滚轮缩放</span>
+    </section>
+  </main>
+  <button id="neural-drawer-toggle" class="drawer-trigger" aria-controls="neural-drawer" aria-expanded="false">神经详情 <span aria-hidden="true">＋</span></button>
+  <aside id="neural-drawer" class="detail-drawer" aria-label="观察详情" hidden inert><header class="drawer-heading"><div><span class="eyebrow">行为 · 神经 · 区域</span><h2>观察详情</h2></div><button id="neural-drawer-close" aria-label="收起观察详情">×</button></header><section id="behavior-details" class="observation-section"><h3>行为与感受</h3><div id="behavior-explanation"></div></section><section id="neural-details" class="circuit-section" aria-label="功能神经回路数值"><h3>神经活动数据</h3><div id="observation-metrics"></div>
+        <div class="research-counter"><span>累计仿真步数</span><output id="neural-steps">—</output></div><p id="neural-note" class="neural-note">等待神经数据</p><div class="section-heading"><h3>回路与感觉通道</h3><span id="circuit-status">等待采样</span></div>
+        
+        <details open><summary>感觉通道 <span>9 路</span></summary><div id="neural-input-values"></div></details>
+        <details><summary>运动与行为回路 <span id="circuit-group-count">—</span></summary><div id="neural-group-values"></div></details>
+        <details><summary>身体反馈与环境 <span>工程换算</span></summary><div id="neural-body-values"></div></details>
+        <details><summary>生活区域 · 活动与实际停留</summary><div id="region-life-values"></div><p class="circuit-note">从本版本开始计时；飞过与落脚分开统计。自由飞行区记录活动时间。</p></details><p id="circuit-window" class="circuit-note"></p><button id="neuron-open" disabled>查看全部神经元 ↗</button>
+      </section></aside>
+  <button id="habitat-tools-toggle" class="habitat-tools-toggle" aria-controls="habitat-tools" aria-expanded="false">环境与记录 <span aria-hidden="true">＋</span></button>
+  <aside id="habitat-tools" class="habitat-tools" aria-label="环境与生活记录" hidden inert><header class="drawer-heading"><h2>环境与记录</h2><button id="habitat-tools-close" aria-label="关闭环境与记录">×</button></header><section class="zones-section"><div class="section-heading"><h3>房间里的角落</h3><span>点击看看</span></div><div class="zone-grid" id="zone-grid"></div></section>
+<div id="room-interactions"></div>
+<section class="environment-section" hidden inert><div class="section-heading"><h3>窗外与屏幕</h3><span>改变环境</span></div>
+        <label for="daytime">北京时间 · 现实昼夜</label><select id="daytime" hidden><option value="local">北京时间 · 24小时</option><option value="cycle">加速昼夜 · 24 分钟</option><option value="dawn">清晨预览</option><option value="day">白天预览</option><option value="dusk">黄昏预览</option><option value="night">夜晚预览</option></select>
+        <div class="desk-controls"><button data-disturbance="breeze">一阵微风</button><button data-disturbance="shadow">掠过的影子</button></div><div class="desk-controls"><button id="screen-toggle">关闭屏幕</button><button id="leave-game" hidden>回到房间</button></div>
+        <label for="game-cartridge">电脑里的卡带</label><select id="game-cartridge"><option value="racer">像素公路 · 赛车</option><option value="breakout">砖块弹球 · 打砖块</option><option value="invaders">星际巡航 · 太空战机</option></select>
+        <canvas id="arcade-preview" width="160" height="120" aria-label="工作台游戏实况，镜隙通过神经输出操作"></canvas>
+        <p id="desk-state" role="status">屏幕里有一个小世界，等他发现。</p>
+      </section>
+<section class="journal-section"><div class="section-heading"><h3>屋里的小事</h3><span>房内时间</span></div><ol id="journal" class="journal" aria-live="polite"></ol></section><footer class="life-footer"><span id="save-status">正在准备存档</span><button id="help-life">生活机制 ↗</button></footer></aside>
+  <footer class="transport"><div><span class="eyebrow">果蝇之家</span><span class="version">v8.5.0</span><span id="render-rate" title="当前窗口的实际帧率，非独立测试结果">测量帧率…</span></div><div class="time-controls" id="demo-time-controls"><span>北京时间 · 1×</span><div hidden class="speed-switch" role="group" aria-label="生活速度"><button data-speed="1" class="active" aria-pressed="true">1×</button><button data-speed="3" aria-pressed="false">3×</button><button data-speed="10" aria-pressed="false">10×</button></div><button id="pause-button" hidden class="pause-button">暂停生活</button></div><span class="persistence-note">生活持续记录中</span></footer>
+  <dialog id="settings-dialog" aria-labelledby="settings-title">
+    <header class="settings-heading"><div><h2 id="settings-title">设置</h2><p>声音、天气、显示和存档，都在这里。</p></div><button id="settings-close" aria-label="关闭设置">×</button></header>
+    <div class="settings-layout">
+      <div class="settings-nav" role="tablist" aria-label="设置分类" aria-orientation="vertical">
+        <button id="settings-tab-sound" role="tab" aria-controls="settings-pane-sound" aria-selected="true" data-settings-tab="sound">声音与天气</button>
+        <button id="settings-tab-display" role="tab" aria-controls="settings-pane-display" aria-selected="false" tabindex="-1" data-settings-tab="display">显示与语言</button>
+        <button id="settings-tab-backup" role="tab" aria-controls="settings-pane-backup" aria-selected="false" tabindex="-1" data-settings-tab="backup">存档与备份</button>
+        <button id="settings-tab-about" role="tab" aria-controls="settings-pane-about" aria-selected="false" tabindex="-1" data-settings-tab="about">关于与运行</button>
+      </div>
+      <div class="settings-content">
+        <section id="settings-pane-sound" role="tabpanel" aria-labelledby="settings-tab-sound" tabindex="0"><div id="settings-voice"></div><div id="settings-atmosphere"></div></section>
+        <section id="settings-pane-display" role="tabpanel" aria-labelledby="settings-tab-display" tabindex="0" hidden>
+          <section class="settings-group"><h3>界面语言</h3><div id="settings-language"></div></section>
+          <section class="settings-group"><h3>主画面显示</h3><label class="settings-check"><input id="show-brain" type="checkbox" checked>显示神经活动图</label><label class="settings-check"><input id="show-hints" type="checkbox" checked>显示视角操作提示</label><p class="section-description">照顾操作在左侧，视角切换在上方，生活记录在左下角。</p></section>
+        </section>
+        <section id="settings-pane-backup" role="tabpanel" aria-labelledby="settings-tab-backup" tabindex="0" hidden><section class="settings-group"><h3>当前存档</h3><div id="settings-save"></div><div id="settings-identity"></div></section><div id="settings-backup"></div></section>
+        <section id="settings-pane-about" role="tabpanel" aria-labelledby="settings-tab-about" tabindex="0" hidden><section class="settings-group"><h3>关于这个家</h3><p class="section-description">生活机制、模型说明与三维模型导出。</p><div id="settings-about-links" class="settings-actions"></div></section><section class="settings-group"><h3>运行信息</h3><dl class="runtime-info"><div><dt>版本</dt><dd id="settings-version"></dd></div><div><dt>连接</dt><dd id="settings-connection"></dd></div><div><dt>画面帧率</dt><dd id="settings-performance"></dd></div><div><dt>生活计时</dt><dd id="settings-time"></dd></div></dl></section></section>
+      </div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <dialog id="neuron-dialog" aria-labelledby="neuron-dialog-title">
+    <button id="neuron-close" class="dialog-close" aria-label="关闭神经元详情">×</button>
+    <h2 id="neuron-dialog-title">神经元明细</h2>
+    <p>全部 4,386 个细胞。Hz 是当前神经时间窗口的放电频率；膜电位和突触驱动来自实际仿真，未注释细胞不猜测功能。</p>
+    <div class="neuron-searchbar"><label>类型 / root ID / 功能<input id="neuron-search" maxlength="80" placeholder="例如 DNa02、进食或 root ID"></label>
+      <label>角色<select id="neuron-role"><option value="all">全部细胞</option><option value="input">感觉输入</option><option value="motor">运动读出</option><option value="behavior">行为读出</option><option value="candidate">功能候选</option><option value="support">连接支持</option></select></label></div>
+    <div class="neuron-table-wrap"><table><thead><tr><th>类型 / 侧别</th><th>root ID</th><th>角色</th><th>Hz</th><th>膜电位 mV</th><th>突触驱动</th><th>不应期 ms</th></tr></thead><tbody id="neuron-cells"></tbody></table></div>
+    <div class="neuron-pagination"><button id="neuron-prev">上一页</button><span id="neuron-page">正在读取</span><button id="neuron-next">下一页</button></div><p id="neuron-sample" role="status"></p>
+  </dialog>
+  <dialog id="about-dialog"><button id="close-dialog" class="dialog-close" aria-label="关闭说明">×</button><span class="eyebrow">ABOUT THIS HOME</span><h2>关于果蝇之家</h2><p>这里只住着镜隙。精力、饱足度、娱乐度、舒适度、水分、休息充足度、洁净度、排泄舒适度、安心度和干爽度随日常活动变化。所有状态均为0—100分，数值越高越好，100分表示该项最佳状态，生活与经历保存在这台电脑上。</p><p>右侧使用从全量 FlyWire v783 数据按功能回路重新选出的子网络：4,386 个神经元、302,896 条连接。点亮来自服务端实际仿真放电；脑形和采样连线是示意布局，不是解剖坐标。所有访客看到同一份神经活动。</p><p>物品提供气味、光线、湿度和振动。身体状态改变对这些信号的敏感度；航向与目标群体接受工程感觉投影，另有味觉、触角及视觉趋近通道；有功能依据的 PFL 与下行神经放电经过校准读出，连续控制身体受力。生活需要经过短时汇总，主目标执行到完成，其他需要作为候选等待；寻找食物、水源和厕所时，原有感觉与路线机制继续工作；独立中性气味可经突触学习后参与感觉输入，接近食物仍需真实落脚与接触。持续受困时保留短时脱困反射。需求与目标每秒评估1次，接近目标或受阻时运动反馈临时提高到每秒10次，真实接触后稳定完成动作；身体运动保持每秒50步，暂停和加速同时作用于脑与身体，神经状态随生活存档。</p><p>这是果蝇连接子网络与简化身体的工程闭环，不是已验证的完整果蝇脑和生物力学模型。感觉输入、运动读出和代谢参数由工程设计；神经输出负责远距离选择与飞行；如厕末端采用有界的落脚、内移、转身动作程序，每一步仍通过真实碰撞与脚部支撑校验。休息和进食需要实际接触，物品不会命令他前往某处。</p><p>本地中性气味学习试验：保留原有觅食能力，实际吃到食物才触发教学信号；独立 A/B 气味在初始权重下不产生趋近偏置，关联由内部突触变化保存。原运动神经网络继续控制身体；撤去食物后的行为效果以对照实验结果为准。</p><div class="dialog-foot">果蝇之家 · v8.5.0 <span>F 全屏 / Esc 退出</span></div></dialog>
+  <script src="./runtime-config.js"></script><script type="module" src="/app.mjs"></script>
+</body>
+</html>

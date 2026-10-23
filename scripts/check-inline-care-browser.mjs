@@ -1,0 +1,65 @@
+import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {EmbodiedLife} from '../src/embodied-life.mjs';
+import {createCompanion,adoptCompanion} from '../public/companion-identity.mjs';
+import {createCare} from '../public/pet-care.mjs';
+import {foodStock,syncFoodTotal} from '../public/food-stock.mjs';
+import {companionCheckpoint} from '../public/companion-checkpoint.mjs';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE??'file:///C:/Users/39215/.codex/skills/develop-web-game/node_modules/playwright/index.mjs');
+const out='output/companion-v7.5';await fs.mkdir(out,{recursive:true});
+const s=new EmbodiedLife().state;s.companion=createCompanion();adoptCompanion(s.companion,'小块');s.living.care=createCare();s.home.water=0;
+Object.assign(foodStock(s),{apple:100,banana:50,burger:25,pizza:0,fries:75,sandwich:12.5,fig:62.5});syncFoodTotal(s);
+const report={checks:[],errors:[]},check=(name,value)=>{assert.ok(value,name);report.checks.push(name);};
+const browser=await chromium.launch({headless:true,args:['--use-angle=d3d11','--enable-gpu','--ignore-gpu-blocklist']});
+try{
+ const context=await browser.newContext({viewport:{width:1440,height:960}});
+ await context.addInitScript(cp=>{if(!sessionStorage.seeded){localStorage.setItem('mirror-gap-companion-v2',JSON.stringify(cp));sessionStorage.seeded='yes';}},companionCheckpoint(s));
+ const page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
+ const state=()=>page.evaluate(()=>JSON.parse(render_game_to_text()));
+ const ready=()=>page.waitForFunction(()=>document.body.dataset.scene==='ready'&&JSON.parse(render_game_to_text()).connected,null,{timeout:120000});
+ await page.goto('http://127.0.0.1:4207/');await ready();
+ await page.waitForFunction(()=>JSON.parse(render_game_to_text()).rendering.foodPortions.visible===26);
+ check('seven independent food quantities render 26 remaining portions',(await state()).rendering.foodPortions.visible===26);
+ check('five care buttons and ten body states',await page.locator('.need .need-action').count()===5&&await page.locator('.need').count()===10);
+ check('food button shows actual stock',await page.locator('[data-care-need=satiety] small').innerText()==='剩余 46%');
+ check('water button shows empty stock',await page.locator('[data-care-need=thirst] small').innerText()==='剩余 0%');
+ const layout=await page.locator('.need:has(.need-action)').first().evaluate(el=>{const bar=el.querySelector('.need-track').getBoundingClientRect(),button=el.querySelector('button').getBoundingClientRect();return {width:bar.width,height:bar.height,right:bar.right,buttonX:button.x};});
+ check('short thick bars leave room for action buttons',layout.height===10&&layout.width<200&&layout.width>100&&layout.buttonX>layout.right);report.layout=layout;
+ await page.screenshot({path:`${out}/desktop.png`});
+ await page.click('#habitat-tools-toggle');
+ check('redundant care panels removed',await page.locator('#pet-care-actions,#pet-supplies,#pet-health').count()===0);
+ check('weather and sound moved to settings',await page.locator('#settings-atmosphere .atmosphere-controls').count()===1&&await page.locator('#habitat-tools .atmosphere-controls').count()===0);
+ check('no care buttons in environment records',await page.locator('#habitat-tools [data-care],#habitat-tools [data-command=feed],#habitat-tools [data-command=water]').count()===0);
+ await page.locator('[data-zone=feed]').first().click();await page.click('#habitat-tools-close');await page.waitForTimeout(1600);
+ await page.screenshot({path:`${out}/food-partial.png`});
+ const care=async(key,predicate)=>{const button=page.locator(`[data-care-need=${key}]`);await button.click({timeout:15000});await page.waitForFunction(predicate);};
+ await care('satiety',()=>JSON.parse(render_game_to_text()).home.food>99);
+ await page.waitForFunction(()=>JSON.parse(render_game_to_text()).rendering.foodPortions.visible===56);
+ check('food action restores every portion without adding water',(await state()).home.water===0);
+ await page.screenshot({path:`${out}/food-full.png`});
+ await care('thirst',()=>JSON.parse(render_game_to_text()).home.water>99);
+ check('water action works beside thirst',(await state()).home.water>99);
+ await care('sleepPressure',()=>JSON.parse(render_game_to_text()).living.care.maintenance.bedding>.99);
+ await care('waste',()=>JSON.parse(render_game_to_text()).living.care.maintenance.cleanliness>.99);
+
+
+ await care('curiosity',()=>{const s=JSON.parse(render_game_to_text());return s.living.care.maintenance.enrichUntil>s.simSeconds;});
+ check('food remaining updates after refill',await page.locator('[data-care-need=satiety] small').innerText()==='剩余 100%');
+ check('water remaining updates after refill',await page.locator('[data-care-need=thirst] small').innerText()==='剩余 100%');
+ check('play button shows activity countdown',(await page.locator('[data-care-need=curiosity] small').innerText()).startsWith('活动 '));
+ check('bedding and environment show cleanliness',await page.locator('[data-care-need=sleepPressure] small').innerText()==='洁净 100%'&&await page.locator('[data-care-need=waste] small').innerText()==='洁净 100%');
+ await page.evaluate(async()=>{const {localApi}=await import('/browser-life.mjs');await localApi('/api/command',{type:'pause',value:true});});await page.waitForTimeout(600);
+ check('paused care controls disabled',await page.locator('.need-action:disabled').count()===5);
+ await page.reload();await ready();check('inventory survives refresh',(await state()).home.food>99);
+ await page.setViewportSize({width:390,height:844});
+ if(await page.locator('.hud-status').evaluate(el=>el.classList.contains('is-collapsed')))await page.click('.hud-status .hud-collapse');
+ await page.screenshot({path:`${out}/mobile.png`});
+ check('mobile has no page overflow',await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+ await page.locator('[data-care-need=waste]').scrollIntoViewIfNeeded();
+ check('last care action accessible by scrolling',await page.locator('[data-care-need=waste]').isVisible());
+ await page.click('#settings-toggle');await page.click('#settings-tab-display');await page.click('[data-language=en]');await page.click('#settings-close');await page.waitForTimeout(400);
+ await page.screenshot({path:`${out}/mobile-en.png`});
+ check('English care labels update',await page.locator('[data-care-need=thirst] span').innerText()==='Add water');
+ check('no runtime errors',report.errors.length===0);report.passed=true;
+}catch(e){report.passed=false;report.failure=e.stack;process.exitCode=1;}
+finally{await fs.writeFile(`${out}/inline-care-browser.json`,JSON.stringify(report,null,2));await browser.close();console.log(JSON.stringify(report));}
